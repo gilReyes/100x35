@@ -20,6 +20,12 @@ namespace Web.Controllers
             return View();
         }
 
+        public ActionResult TestAction()
+        {
+            return View("Index");
+        }
+
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

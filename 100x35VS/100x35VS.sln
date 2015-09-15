@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Resources.csproj", "{18C26768-58C3-414A-AB0E-666BBF9FBB75}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{6AAF17D6-CAE3-4740-A118-C5382C8E731F}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\Desktop\ER Diagram.pdf = ..\..\..\..\..\Desktop\ER Diagram.pdf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -1,0 +1,34 @@
+Read Me:
+
+
+What worked well?
+
+
+For our team the part the worked the best was the ER-Diagram. Thanks to one of our members that already had a solid idea with all clear requirements its was pretty easy to design the ER-Diagram and it had only minor errors.
+
+What Didn’t work well?
+
+The git version control gave us some problems because we connected it directly to visual studio parallel with Team Foundation and the local repositories got all cluttered and at the end we decided to go only with git. The cloud hosting of our project also gave us some little problems because some references got changed when the project was pushed to github but at the end we managed to work things out
+
+What we learned?
+
+All of our team members learned how to design ER-Diagrams pretty well and got a good understanding of all of the basic concepts. Also we learned to connect a remote git repository directly to visual studio without having to use a git client. A very important thing we learn was how easy it was to host a web app using azure hosting services.
+
+Next Sprint Planning:
+Functionalities that should be developed next sprint:
+
+■	User Registration
+
+■	User Login
+
+■	Admin Tools
+
+■	Edit User Profile
+
+■	View/Search Locations with filters
+
+■	Add multi language support
+
+Adjust work habits based on how progress is made
+
+Update Master Project Plan

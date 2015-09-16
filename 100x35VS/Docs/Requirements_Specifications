@@ -1,0 +1,72 @@
+#100x35 APPLICATION: REQUIREMENTS AND SPECIFICATIONS
+
+By: Stephan Elías (stephan.elias@upr.edu), Jahannie Torres (jahannie.torres@upr.edu), 
+Gil Reyes (gil.reyes@upr.edu)
+
+Computer Engineering 
+
+University of Puerto Rico
+
+Mayagüez, Puerto Rico
+
+ICOM 5016 Class Project
+
+Prof. Kejie Lu
+
+September 15, 2015
+
+
+
+##Introduction: 
+    1.1 Purpose: The purpose of this document is to define the scope of the project and present the application features and development process.  This aims to convince the stakeholders about the viability and potential of the project.
+	1.2 Scope:
+        Name: 100x35
+        Do’s: 
+            1. Users can search all locations
+            2. Places can be filtered through type and locations
+            3. View locations of interest on a map
+            4. View locations of interest on a list
+            5. You can view specifications such as descriptions, photos, and contact information.
+            6. User will have a system to add and remove friends.
+            7. Users can share the locations of their map, favorite spots or visited spots.
+            8. User can submit new locations to be added to the map
+            9. Users will have an inbox to send and receive messages
+            10. Every user will have an individual account
+            11. Measure the percent of visited places
+            12. Upload photos to specific locations.
+            13. Option to report photos that would be considered offensive.
+            14. Choose the privacy of the pictures uploaded. (Public, Friends Only, Private)
+            15. The application will be English and Spanish
+        Not do’s:
+            1. Instant messaging between users
+            2. Users will not be able to directly add new locations through submissions
+            3. Users will not be able to upload videos or gifs to a specific place
+            4. Create more than one account using the same information
+            5. The application will not have more than two languages.
+            6. Users will not be able to buy or acquire the services offered by the places.
+            7. The service will only apply to Puerto Rico
+            8. Places added will not be able to offer illegal services or products.
+            9. Benefits: Know more information about places, products and services around PR. Also, business owners can promote themselves.
+        Goals: Promote tourism and  cultural exchange in PR.
+	1.3 Development Frameworks:
+            ASP .NET MVC- We picked this because it's easy to learn and we like the way it divides the logic from the view and the models also it is easy to integrate to a DBMS. Some of the team members already had worked with this framework. This framework also facilitates multiple people working on the same project.
+           
+            
+           MS SQL Server- We picked this DBMS because some members had previous knowledge of it and we have access to a                 server that supports MS SQL. Also we want to make our application with high performance and scalability.In case of system failure Microsoft SQL Server has an automatic recovery mechanism that recovers a database to the last state of consistency in a matter of minutes, with no database administrator intervention. Critical applications can be up and running again right away. Also MS SQL has server based processing meaning that it reduces network traffic by processing database queries on the server before sending results to the client.
+ 
+	1.5 Overview: Outline of the remainder of the document and its organization 
+##General Description
+    2.1 Product Perspective: Independent product with Google Maps plugins
+	2.2 System Evolution
+            SCRUM life cycle will be used. 
+            All features and requirements will be added to a Product Backlog that will then be divided into Sprint Backlogs which will be used for each planned sprint.
+            The group will have 3 short meetings weekly in which they will discuss the progress of the individual assignments and 2 long additional meetings in which the team will work together on more complex tasks.
+            Each sprint will have as a result the necessary requirements for the phase to deliver a potentially finished product.
+	2.3 User of the product
+            Tourists: Teens and adults
+                 No technical experience required    
+            Business Owners: Adults
+                 No technical experience required
+
+
+

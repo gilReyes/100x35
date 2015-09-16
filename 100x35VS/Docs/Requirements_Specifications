@@ -1,4 +1,4 @@
-#100x35 APPLICATION: REQUIREMENTS AND SPECIFICATIONS
+# 100x35 APPLICATION: REQUIREMENTS AND SPECIFICATIONS
 
 By: Stephan Elías (stephan.elias@upr.edu), Jahannie Torres (jahannie.torres@upr.edu), 
 Gil Reyes (gil.reyes@upr.edu)
@@ -17,7 +17,7 @@ September 15, 2015
 
 
 
-##Introduction: 
+## Introduction: 
     1.1 Purpose: The purpose of this document is to define the scope of the project and present the application features and development process.  This aims to convince the stakeholders about the viability and potential of the project.
 	1.2 Scope:
         Name: 100x35
@@ -55,7 +55,7 @@ September 15, 2015
            MS SQL Server- We picked this DBMS because some members had previous knowledge of it and we have access to a                 server that supports MS SQL. Also we want to make our application with high performance and scalability.In case of system failure Microsoft SQL Server has an automatic recovery mechanism that recovers a database to the last state of consistency in a matter of minutes, with no database administrator intervention. Critical applications can be up and running again right away. Also MS SQL has server based processing meaning that it reduces network traffic by processing database queries on the server before sending results to the client.
  
 	1.5 Overview: Outline of the remainder of the document and its organization 
-##General Description
+## General Description
     2.1 Product Perspective: Independent product with Google Maps plugins
 	2.2 System Evolution
             SCRUM life cycle will be used. 

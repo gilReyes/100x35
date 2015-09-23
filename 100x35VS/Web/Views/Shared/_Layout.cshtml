@@ -28,6 +28,7 @@
     <link href="../../assets/globals/plugins/morris/morris.css" rel="stylesheet" type="text/css">
     <!-- END PAGE LEVEL PLUGIN STYLES -->
     <!-- BEGIN PAGE STYLES -->
+    <link rel="stylesheet" type="text/css" href="../../assets/globals/plugins/jquery-notific8/jquery.notific8.min.css" />
     <link href="../../assets/admin/pages/css/tasks.css" rel="stylesheet" type="text/css" />
     <!-- END PAGE STYLES -->
     <!-- BEGIN THEME STYLES -->
@@ -38,6 +39,7 @@
     <link href="../../assets/admin/layout3/css/custom.css" rel="stylesheet" type="text/css">
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <!-- END THEME STYLES -->
+    @RenderSection("Styles", required: false)
     <link rel="shortcut icon" href="favicon.ico">
 </head>
 <!-- END HEAD -->
@@ -220,7 +222,7 @@
                             </ul>
                         </li>
                         <li class="col-sm-4 col-md-4 col-lg-4">
-                            <div class="input-group">
+                            <div class="input-group padding-top-10">
                                 <input type="text" class="form-control" placeholder="Search Location" aria-describedby="basic-addon2">
                                 <span class="input-group-addon" id="basic-addon2">Go!</span>
                             </div>
@@ -366,7 +368,9 @@
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
             <div class="container-fluid">
-         
+                <div class="row">
+                    <div id="AlertBox" class="col-md-12"></div>
+                </div>
                 <!-- BEGIN PAGE CONTENT INNER -->
                 @RenderBody()
                 <!-- END PAGE CONTENT INNER -->
@@ -461,13 +465,28 @@
     <script src="../../assets/globals/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
-    <script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
+    <script src="../../assets/globals/scripts/metronic.js" type="text/javascript"></script>
     <script src="../../assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
     <script src="../../assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
     <script src="../../assets/admin/pages/scripts/index3.js" type="text/javascript"></script>
     <script src="../../assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
+    <script src="../../assets/globals/plugins/jquery-notific8/jquery.notific8.min.js"></script>
     <!-- END PAGE LEVEL SCRIPTS -->
+    @RenderSection("Scripts", required: false)
     <script>
+        var siteUrl = "http://localhost:54229/";
+
+        var showError = function () {
+            var options = {
+                life: 5000,
+                theme: 'ruby',
+                sticky: false,
+                horizontalEdge: 'top',
+                verticalEdge: 'right'
+            }
+            $.notific8('There was an error with the previous action. Please try again.', options);
+        };
+
         jQuery(document).ready(function () {
             Metronic.init(); // init metronic core componets
             Layout.init(); // init layout

@@ -1,0 +1,58 @@
+First 2 Sprints Project Plan
+
+Sprint 1:
+
+
+DBMS - Sept. 17, Thursday - Sept. 24, Thursday
+
+    Host Database on Azure Web Server
+    Create all tables with respective relations
+    Add dummy data for developing purposes
+    Mockups / Screenshots - Sept. 17, Thursday - Sept. 22, Tuesday
+    Complete project GUI using HTML with bootstrap and javascript
+    Add bare minimum code for demo purposes
+Gantt Chart Update - Sept. 24, Thursday
+
+    Since the architecture will be SCRUM each stage will start with a planning meeting
+    At the end of the stage the progress is reviewed and the team will launch a complete portion of the product
+    In order to have a functional system after each stage the team will test all the features working together before each code integration
+Sprint 2 Planning - Sept. 24, Thursday
+
+    Analyze the sprint requirements and determine which functionalities should be developed next:
+        User Registration
+        User Login
+        Admin Tools
+        Edit User Profile
+        View/Search Locations with filters
+        Add multi language support
+        
+    Adjust work habits based on how progress is made
+Update Master Project Plan - Sept. 24, Thursday
+
+    Based on the completed work
+
+Sprint 2:
+
+Sprint 2 Work Items - Sept 29, Tuesday - Oct 11, Sunday
+
+    Complete and test all work items planned for the current sprint
+    
+DBMS -  Sept 29, Tuesday - Oct 11, Sunday
+
+    Add dummy data for testing purposes
+    Manipulate tables and relations if some new ideas or new problems arrive
+Sprint 3 Planning - Oct. 8, Thursday
+
+    Analyze the sprint requirements and determine which functionalities should be developed next:
+        Mark Locations As Visited/Favorite
+        Submit Locations
+        Report Locations
+        Rating system for locations
+        Adjust work habits based on how progress is made
+Update Master Project Plan - Oct. 8, Thursday
+
+    Based on the completed work
+    
+![alt text](http://i.imgur.com/dS7oNY7.png)
+
+

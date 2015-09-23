@@ -26,3 +26,11 @@ textarea {
 .btn{
      margin-bottom: 10px;
 }
+
+.fa-heart {
+    color: rgb(235, 67, 0);
+}
+
+.fa-star {
+    color: rgb(219, 219, 21);
+}

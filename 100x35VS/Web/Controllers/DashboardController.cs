@@ -4,14 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace API.Controllers
+namespace Web.Controllers
 {
-    public class HomeController : Controller
+    public class DashboardController : Controller
     {
+        // GET: Dashboard
         public ActionResult Index()
         {
-            ViewBag.Title = "Login Page";
-
             return View();
         }
     }

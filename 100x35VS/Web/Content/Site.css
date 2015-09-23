@@ -2,7 +2,9 @@
     padding-top: 50px;
     padding-bottom: 20px;
 }
-
+h1{
+    color: #4cab9f;
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;

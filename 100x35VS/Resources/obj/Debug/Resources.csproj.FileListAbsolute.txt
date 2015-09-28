@@ -7,3 +7,13 @@ C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Resources
 C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Resources\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Resources\obj\Debug\Resources.dll
 C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Resources\obj\Debug\Resources.pdb
+P:\Documents\GitHub\100x35\100x35VS\Resources\bin\Debug\Resources.dll.config
+P:\Documents\GitHub\100x35\100x35VS\Resources\bin\Debug\Resources.dll
+P:\Documents\GitHub\100x35\100x35VS\Resources\bin\Debug\Resources.pdb
+P:\Documents\GitHub\100x35\100x35VS\Resources\bin\Debug\EntityFramework.dll
+P:\Documents\GitHub\100x35\100x35VS\Resources\bin\Debug\EntityFramework.SqlServer.dll
+P:\Documents\GitHub\100x35\100x35VS\Resources\bin\Debug\EntityFramework.xml
+P:\Documents\GitHub\100x35\100x35VS\Resources\bin\Debug\EntityFramework.SqlServer.xml
+P:\Documents\GitHub\100x35\100x35VS\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+P:\Documents\GitHub\100x35\100x35VS\Resources\obj\Debug\Resources.dll
+P:\Documents\GitHub\100x35\100x35VS\Resources\obj\Debug\Resources.pdb

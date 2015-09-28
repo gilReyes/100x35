@@ -40,3 +40,45 @@ C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Web\bin\S
 C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
 C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Web\obj\Debug\Web.dll
 C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Web\obj\Debug\Web.pdb
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Web.dll.config
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Web.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Web.pdb
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Antlr3.Runtime.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Entity.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\EntityFramework.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\EntityFramework.SqlServer.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Microsoft.Web.Infrastructure.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Newtonsoft.Json.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Ninject.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Ninject.Web.Common.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Ninject.Web.Mvc.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Owin.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Resources.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\System.Web.Helpers.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\System.Web.Mvc.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\System.Web.Optimization.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\System.Web.Razor.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\System.Web.WebPages.Deployment.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\System.Web.WebPages.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\System.Web.WebPages.Razor.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\WebActivatorEx.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\WebGrease.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Entity.pdb
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Resources.pdb
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Antlr3.Runtime.pdb
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\EntityFramework.xml
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\EntityFramework.SqlServer.xml
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Newtonsoft.Json.xml
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Ninject.xml
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Ninject.Web.Common.xml
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\Ninject.Web.Mvc.xml
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\System.Web.Helpers.xml
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\System.Web.Mvc.xml
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\System.Web.Optimization.xml
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\System.Web.Razor.xml
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\System.Web.WebPages.xml
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\System.Web.WebPages.Deployment.xml
+P:\Documents\GitHub\100x35\100x35VS\Web\bin\System.Web.WebPages.Razor.xml
+P:\Documents\GitHub\100x35\100x35VS\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+P:\Documents\GitHub\100x35\100x35VS\Web\obj\Debug\Web.dll
+P:\Documents\GitHub\100x35\100x35VS\Web\obj\Debug\Web.pdb

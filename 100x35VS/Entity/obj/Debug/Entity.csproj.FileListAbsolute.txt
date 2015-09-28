@@ -1,0 +1,10 @@
+C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Entity\bin\Debug\Entity.dll.config
+C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Entity\bin\Debug\Entity.dll
+C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Entity\bin\Debug\Entity.pdb
+C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Entity\bin\Debug\EntityFramework.dll
+C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Entity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Entity\bin\Debug\EntityFramework.xml
+C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Entity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Entity\obj\Debug\Entity.dll
+C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Entity\obj\Debug\Entity.pdb

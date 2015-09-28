@@ -30,6 +30,7 @@
                 type: "GET"
             }).success(function (data) {
                 $('#InboxBody').html(data);
+                handleEditorInit();
                 handleCompose();
                 handleInbox();
             }).error(function () {
@@ -75,6 +76,7 @@
         init: function () {
             handleInbox();
             handleRead();
+            handleCompose();
         }
     }
 }();

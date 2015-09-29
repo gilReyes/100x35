@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{6AAF17D6-CAE3-4740-A118-C5382C8E731F}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\..\Desktop\ER Diagram.pdf = ..\..\..\..\Desktop\ER Diagram.pdf
+		..\..\..\..\Downloads\Mockups.pdf = ..\..\..\..\Downloads\Mockups.pdf
 	EndProjectSection
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{5F90E3C0-12E2-47C9-AAB3-97D459D01002}"

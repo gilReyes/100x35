@@ -17,13 +17,3 @@ P:\Documents\GitHub\100x35\100x35VS\Resources\bin\Debug\EntityFramework.SqlServe
 P:\Documents\GitHub\100x35\100x35VS\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
 P:\Documents\GitHub\100x35\100x35VS\Resources\obj\Debug\Resources.dll
 P:\Documents\GitHub\100x35\100x35VS\Resources\obj\Debug\Resources.pdb
-C:\Users\User\Documents\GitHub\100x35\100x35VS\Resources\bin\Debug\Resources.dll.config
-C:\Users\User\Documents\GitHub\100x35\100x35VS\Resources\bin\Debug\Resources.dll
-C:\Users\User\Documents\GitHub\100x35\100x35VS\Resources\bin\Debug\Resources.pdb
-C:\Users\User\Documents\GitHub\100x35\100x35VS\Resources\bin\Debug\EntityFramework.dll
-C:\Users\User\Documents\GitHub\100x35\100x35VS\Resources\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\User\Documents\GitHub\100x35\100x35VS\Resources\bin\Debug\EntityFramework.xml
-C:\Users\User\Documents\GitHub\100x35\100x35VS\Resources\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\User\Documents\GitHub\100x35\100x35VS\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
-C:\Users\User\Documents\GitHub\100x35\100x35VS\Resources\obj\Debug\Resources.dll
-C:\Users\User\Documents\GitHub\100x35\100x35VS\Resources\obj\Debug\Resources.pdb

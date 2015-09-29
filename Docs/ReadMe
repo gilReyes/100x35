@@ -1,0 +1,37 @@
+Read Me:
+
+
+What worked well?
+
+
+Sprint 0: For our team the part the worked the best was the ER-Diagram. Thanks to one of our members that already had a solid idea with all clear requirements its was pretty easy to design the ER-Diagram and it had only minor errors.
+Sprint 1: Creation of HTML views for the User Interface
+
+What Didn’t work well?
+
+Sprint 0: The git version control gave us some problems because we connected it directly to visual studio parallel with Team Foundation and the local repositories got all cluttered and at the end we decided to go only with git. The cloud hosting of our project also gave us some little problems because some references got changed when the project was pushed to github but at the end we managed to work things out
+Sprint 1: Azure Permissions giving problems when hosting DBMS
+
+What we learned?
+
+Sprint 0: All of our team members learned how to design ER-Diagrams pretty well and got a good understanding of all of the basic concepts. Also we learned to connect a remote git repository directly to visual studio without having to use a git client. A very important thing we learn was how easy it was to host a web app using azure hosting services.
+Sprint 1: How to use MS SQL Server and one of the team members learned how to use ASP .NET MVC
+
+Next Sprint Planning:
+Functionalities that should be developed next sprint:
+
+■	User 
+
+■	User Login
+
+■	Admin Tools
+
+■	Edit User Profile
+
+■	View/Search Locations with filters
+
+■	Add multi language support
+
+Adjust work habits based on how progress is made
+
+Update Master Project Plan

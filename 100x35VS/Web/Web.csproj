@@ -454,6 +454,7 @@
     <Content Include="assets\admin\pages\media\gallery\image5.jpg" />
     <Content Include="assets\admin\pages\media\gallery\item_img.jpg" />
     <Content Include="assets\admin\pages\media\gallery\item_img1.jpg" />
+    <Content Include="assets\admin\pages\media\gallery\MAPA.PNG" />
     <Content Include="assets\admin\pages\media\gallery\preview_02.png" />
     <Content Include="assets\admin\pages\media\gallery\preview_03.png" />
     <Content Include="assets\admin\pages\media\gallery\preview_04.png" />

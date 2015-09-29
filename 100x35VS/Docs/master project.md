@@ -10,8 +10,8 @@ Project Plan
 
 ###***Major Milestones***
 
-- Project Kickoff : **15 Sep**
-- App GUI and DBMS instance: **24 Sep**
+- Project Kickoff : **15 Sep** (Done)
+- App GUI and DBMS instance: **24 Sep** (Done 28 Sept)
 - App Users logic, add locations to DBMS and Admin Tools: **8 Oct**
 - In-App Pictures logic, inbox system and DBMS population: **24 Oct**
 - App Debugging and Hosting: **7 Nov**

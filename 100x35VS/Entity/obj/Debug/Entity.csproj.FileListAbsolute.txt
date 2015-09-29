@@ -7,13 +7,3 @@ C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Entity\bi
 C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Entity\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Entity\obj\Debug\Entity.dll
 C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Entity\obj\Debug\Entity.pdb
-P:\Documents\GitHub\100x35\100x35VS\Entity\bin\Debug\Entity.dll.config
-P:\Documents\GitHub\100x35\100x35VS\Entity\bin\Debug\Entity.dll
-P:\Documents\GitHub\100x35\100x35VS\Entity\bin\Debug\Entity.pdb
-P:\Documents\GitHub\100x35\100x35VS\Entity\bin\Debug\EntityFramework.dll
-P:\Documents\GitHub\100x35\100x35VS\Entity\bin\Debug\EntityFramework.SqlServer.dll
-P:\Documents\GitHub\100x35\100x35VS\Entity\bin\Debug\EntityFramework.xml
-P:\Documents\GitHub\100x35\100x35VS\Entity\bin\Debug\EntityFramework.SqlServer.xml
-P:\Documents\GitHub\100x35\100x35VS\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
-P:\Documents\GitHub\100x35\100x35VS\Entity\obj\Debug\Entity.dll
-P:\Documents\GitHub\100x35\100x35VS\Entity\obj\Debug\Entity.pdb

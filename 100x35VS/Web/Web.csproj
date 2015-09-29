@@ -147,9 +147,11 @@
     <Compile Include="Controllers\FriendsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InboxController.cs" />
+    <Compile Include="Controllers\LocationProfileController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SignUpController.cs" />
     <Compile Include="Controllers\SubmitController.cs" />
+    <Compile Include="Controllers\SubmitPictureController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1450,6 +1452,8 @@
     <Content Include="Views\Inbox\_Read.cshtml" />
     <Content Include="Views\Submit\Index.cshtml" />
     <Content Include="Views\Friends\Index.cshtml" />
+    <Content Include="Views\LocationProfile\Index.cshtml" />
+    <Content Include="Views\SubmitPicture\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

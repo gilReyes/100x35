@@ -1,5 +1,0 @@
-C:\Users\Saphrax\documents\visual studio 2015\Projects\100x35\100x35VS\Resources\bin\Release\Resources.dll
-C:\Users\Saphrax\documents\visual studio 2015\Projects\100x35\100x35VS\Resources\bin\Release\Resources.pdb
-C:\Users\Saphrax\documents\visual studio 2015\Projects\100x35\100x35VS\Resources\obj\Release\Resources.csprojResolveAssemblyReference.cache
-C:\Users\Saphrax\documents\visual studio 2015\Projects\100x35\100x35VS\Resources\obj\Release\Resources.dll
-C:\Users\Saphrax\documents\visual studio 2015\Projects\100x35\100x35VS\Resources\obj\Release\Resources.pdb

@@ -1,7 +1,0 @@
-C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Database\bin\Debug\Database.dacpac
-C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Database\obj\Debug\Model.xml
-C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Database\obj\Debug\refactor.xml
-C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Database\obj\Debug\postdeploy.sql
-C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Database\obj\Debug\predeploy.sql
-C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Database\obj\Debug\Database.dll
-C:\Users\Saphrax\Documents\Visual Studio 2015\Projects\100x35\100x35VS\Database\obj\Debug\Database.pdb

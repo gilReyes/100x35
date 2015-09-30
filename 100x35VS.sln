@@ -15,8 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Reso
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{6AAF17D6-CAE3-4740-A118-C5382C8E731F}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\..\Desktop\ER Diagram.pdf = ..\..\..\..\..\Desktop\ER Diagram.pdf
+		..\..\..\Desktop\ER Diagram.pdf = ..\..\..\Desktop\ER Diagram.pdf
 	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{5F90E3C0-12E2-47C9-AAB3-97D459D01002}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +46,12 @@ Global
 		{18C26768-58C3-414A-AB0E-666BBF9FBB75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18C26768-58C3-414A-AB0E-666BBF9FBB75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18C26768-58C3-414A-AB0E-666BBF9FBB75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F90E3C0-12E2-47C9-AAB3-97D459D01002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F90E3C0-12E2-47C9-AAB3-97D459D01002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F90E3C0-12E2-47C9-AAB3-97D459D01002}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5F90E3C0-12E2-47C9-AAB3-97D459D01002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F90E3C0-12E2-47C9-AAB3-97D459D01002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F90E3C0-12E2-47C9-AAB3-97D459D01002}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

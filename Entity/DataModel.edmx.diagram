@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9af359c8aa6f432c94e52a59ca4515b4" Name="Diagram1">
+        <EntityTypeShape EntityType="DbModel.Category" Width="1.5" PointX="0.75" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Category_Type" Width="1.5" PointX="1.5" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Event" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Group" Width="1.5" PointX="6" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Location" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Message" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Photo" Width="1.5" PointX="8.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Privacy_Type" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Region" Width="1.5" PointX="1.5" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Town" Width="1.5" PointX="1.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Type" Width="1.5" PointX="1.5" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.User" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Visit" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Event_User" Width="1.5" PointX="8.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Friend" Width="1.5" PointX="6" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Group_User" Width="1.5" PointX="8.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.User_Message" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="DbModel.FK_Category_Category_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Events_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Friends_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Groups_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Event_User_Event" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Events_Created_By" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Events_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Events_Privacy_Type_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Group_User_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Groups_Created_By" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Location_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Location_Zipcode" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Visits_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Message_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Photos_Privacy_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Photos_Visit" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Town_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Event_User_Username" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Friends_Friended" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Friends_Username" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Group_User_Username" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Reciever_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Sender_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Visits_Username" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Category_Id" />
+          </Key>
+          <Property Name="Category_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Category_Type_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Category_Type">
+          <Key>
+            <PropertyRef Name="Category_Type_Id" />
+          </Key>
+          <Property Name="Category_Type_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view '100x35.dbo.Event_User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Event_User">
+          <Key>
+            <PropertyRef Name="Event_Id" />
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="Attending" />
+            <PropertyRef Name="Event_User_Id" />
+          </Key>
+          <Property Name="Event_Id" Type="int" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Attending" Type="bit" Nullable="false" />
+          <Property Name="Event_User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="Event_Id" />
+          </Key>
+          <Property Name="Event_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Location_Id" Type="int" Nullable="false" />
+          <Property Name="Category_Id" Type="int" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Privacy_Type_Id" Type="int" Nullable="false" />
+          <Property Name="Creation_Date" Type="datetime" Nullable="false" />
+          <Property Name="Start_Date" Type="datetime" Nullable="false" />
+          <Property Name="End_Date" Type="datetime" Nullable="false" />
+          <Property Name="Image_Url" Type="varchar" MaxLength="100" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+          <Property Name="Deletion_Date" Type="datetime" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Friends">
+          <Key>
+            <PropertyRef Name="Firend_Id" />
+          </Key>
+          <Property Name="Friend_Username" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Friended_Username" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Category_Id" Type="int" Nullable="false" />
+          <Property Name="Accepted_Date" Type="datetime" />
+          <Property Name="Firend_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view '100x35.dbo.Group_User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Group_User">
+          <Key>
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="Group_Id" />
+            <PropertyRef Name="Join_Date" />
+            <PropertyRef Name="Group_User_Id" />
+          </Key>
+          <Property Name="Username" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Group_Id" Type="int" Nullable="false" />
+          <Property Name="Join_Date" Type="datetime" Nullable="false" />
+          <Property Name="Deletion_Date" Type="datetime" />
+          <Property Name="Group_User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="Groups_Id" />
+          </Key>
+          <Property Name="Groups_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Category_Id" Type="int" Nullable="false" />
+          <Property Name="Created_Date" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Deletion_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Location_Id" />
+          </Key>
+          <Property Name="Location_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Longitude" Type="numeric" Precision="8" Scale="5" Nullable="false" />
+          <Property Name="Lattitude" Type="numeric" Precision="8" Scale="5" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+          <Property Name="Type_Id" Type="int" Nullable="false" />
+          <Property Name="Creation_Date" Type="datetime" Nullable="false" />
+          <Property Name="Likes" Type="int" Nullable="false" />
+          <Property Name="Dislikes" Type="int" Nullable="false" />
+          <Property Name="Popularity" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="Approved" Type="bit" Nullable="false" />
+          <Property Name="Zipcode" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Message_Id" />
+          </Key>
+          <Property Name="Message_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Subject" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Message" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Sent_Date" Type="datetime" Nullable="false" />
+          <Property Name="Read_Date" Type="datetime" />
+          <Property Name="Deletion_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Photos">
+          <Key>
+            <PropertyRef Name="Photos_Id" />
+          </Key>
+          <Property Name="Photos_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Visit_Id" Type="int" Nullable="false" />
+          <Property Name="Image_Url" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+          <Property Name="Like" Type="int" Nullable="false" />
+          <Property Name="Dislike" Type="int" Nullable="false" />
+          <Property Name="Report" Type="int" Nullable="false" />
+          <Property Name="Popularity" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="Privacy_Type_Id" Type="int" />
+          <Property Name="Deletion_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Privacy_Type">
+          <Key>
+            <PropertyRef Name="Privacy_Type_Id" />
+          </Key>
+          <Property Name="Privacy_Type_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="Region_Id" />
+          </Key>
+          <Property Name="Region_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Total_Locations" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Town">
+          <Key>
+            <PropertyRef Name="Zipcode" />
+          </Key>
+          <Property Name="Zipcode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Region_Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Image_Url" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="Type_Id" />
+          </Key>
+          <Property Name="Type_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="User_Message">
+          <Key>
+            <PropertyRef Name="User_Message_Id" />
+          </Key>
+          <Property Name="Sender" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Reciever" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Message_Id" Type="int" Nullable="false" />
+          <Property Name="User_Message_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Total_Places" Type="int" Nullable="false" />
+          <Property Name="Ranking" Type="decimal" Precision="2" Scale="2" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="14" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+          <Property Name="Birth_Date" Type="datetime" Nullable="false" />
+          <Property Name="Create_Date" Type="datetime" Nullable="false" />
+          <Property Name="Deletion_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Visits">
+          <Key>
+            <PropertyRef Name="Visit_Id" />
+          </Key>
+          <Property Name="Username" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Location_Id" Type="int" Nullable="false" />
+          <Property Name="Visit_Date" Type="datetime" Nullable="false" />
+          <Property Name="Favorite" Type="bit" Nullable="false" />
+          <Property Name="Deletion_Date" Type="datetime" />
+          <Property Name="Visit_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Category_Category_Type">
+          <End Role="Category_Type" Type="Self.Category_Type" Multiplicity="1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category_Type">
+              <PropertyRef Name="Category_Type_Id" />
+            </Principal>
+            <Dependent Role="Category">
+              <PropertyRef Name="Category_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_User_Event">
+          <End Role="Events" Type="Self.Events" Multiplicity="1" />
+          <End Role="Event_User" Type="Self.Event_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="Event_Id" />
+            </Principal>
+            <Dependent Role="Event_User">
+              <PropertyRef Name="Event_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_User_Username">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Event_User" Type="Self.Event_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Event_User">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Events_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Events" Type="Self.Events" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Category_Id" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Events_Created_By">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Events" Type="Self.Events" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="Created_By" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Events_Location">
+          <End Role="Location" Type="Self.Location" Multiplicity="1" />
+          <End Role="Events" Type="Self.Events" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Location_Id" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="Location_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Events_Privacy_Type_Id">
+          <End Role="Privacy_Type" Type="Self.Privacy_Type" Multiplicity="1" />
+          <End Role="Events" Type="Self.Events" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Privacy_Type">
+              <PropertyRef Name="Privacy_Type_Id" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="Privacy_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Friends_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Friends" Type="Self.Friends" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Category_Id" />
+            </Principal>
+            <Dependent Role="Friends">
+              <PropertyRef Name="Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Friends_Friended">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Friends" Type="Self.Friends" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Friends">
+              <PropertyRef Name="Friended_Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Friends_Username">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Friends" Type="Self.Friends" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Friends">
+              <PropertyRef Name="Friend_Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Group_User_Group">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+          <End Role="Group_User" Type="Self.Group_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="Groups_Id" />
+            </Principal>
+            <Dependent Role="Group_User">
+              <PropertyRef Name="Group_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Group_User_Username">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Group_User" Type="Self.Group_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Group_User">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Groups_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Groups" Type="Self.Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Category_Id" />
+            </Principal>
+            <Dependent Role="Groups">
+              <PropertyRef Name="Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Groups_Created_By">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Groups" Type="Self.Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Groups">
+              <PropertyRef Name="Created_By" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_Type">
+          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="Location" Type="Self.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_Zipcode">
+          <End Role="Town" Type="Self.Town" Multiplicity="1" />
+          <End Role="Location" Type="Self.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Town">
+              <PropertyRef Name="Zipcode" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="Zipcode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_Message">
+          <End Role="Message" Type="Self.Message" Multiplicity="1" />
+          <End Role="User_Message" Type="Self.User_Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Message_Id" />
+            </Principal>
+            <Dependent Role="User_Message">
+              <PropertyRef Name="Message_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Photos_Privacy_Type">
+          <End Role="Privacy_Type" Type="Self.Privacy_Type" Multiplicity="0..1" />
+          <End Role="Photos" Type="Self.Photos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Privacy_Type">
+              <PropertyRef Name="Privacy_Type_Id" />
+            </Principal>
+            <Dependent Role="Photos">
+              <PropertyRef Name="Privacy_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Photos_Visit">
+          <End Role="Visits" Type="Self.Visits" Multiplicity="1" />
+          <End Role="Photos" Type="Self.Photos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visits">
+              <PropertyRef Name="Visit_Id" />
+            </Principal>
+            <Dependent Role="Photos">
+              <PropertyRef Name="Visit_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reciever_Message">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="User_Message" Type="Self.User_Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="User_Message">
+              <PropertyRef Name="Reciever" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sender_Message">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="User_Message" Type="Self.User_Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="User_Message">
+              <PropertyRef Name="Sender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Town_Region">
+          <End Role="Region" Type="Self.Region" Multiplicity="1" />
+          <End Role="Town" Type="Self.Town" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Region_Id" />
+            </Principal>
+            <Dependent Role="Town">
+              <PropertyRef Name="Region_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Visits_Location">
+          <End Role="Location" Type="Self.Location" Multiplicity="1" />
+          <End Role="Visits" Type="Self.Visits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Location_Id" />
+            </Principal>
+            <Dependent Role="Visits">
+              <PropertyRef Name="Location_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Visits_Username">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Visits" Type="Self.Visits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Visits">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbModelStoreContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category_Type" EntityType="Self.Category_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Friends" EntityType="Self.Friends" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Photos" EntityType="Self.Photos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Privacy_Type" EntityType="Self.Privacy_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Town" EntityType="Self.Town" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Message" EntityType="Self.User_Message" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Visits" EntityType="Self.Visits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event_User" EntityType="Self.Event_User" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Event_User].[Event_Id] AS [Event_Id], 
+    [Event_User].[Username] AS [Username], 
+    [Event_User].[Attending] AS [Attending], 
+    [Event_User].[Event_User_Id] AS [Event_User_Id]
+    FROM [dbo].[Event_User] AS [Event_User]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Group_User" EntityType="Self.Group_User" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Group_User].[Username] AS [Username], 
+    [Group_User].[Group_Id] AS [Group_Id], 
+    [Group_User].[Join_Date] AS [Join_Date], 
+    [Group_User].[Deletion_Date] AS [Deletion_Date], 
+    [Group_User].[Group_User_Id] AS [Group_User_Id]
+    FROM [dbo].[Group_User] AS [Group_User]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Category_Category_Type" Association="Self.FK_Category_Category_Type">
+            <End Role="Category_Type" EntitySet="Category_Type" />
+            <End Role="Category" EntitySet="Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_User_Event" Association="Self.FK_Event_User_Event">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="Event_User" EntitySet="Event_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_User_Username" Association="Self.FK_Event_User_Username">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Event_User" EntitySet="Event_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Events_Category" Association="Self.FK_Events_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Events_Created_By" Association="Self.FK_Events_Created_By">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Events_Location" Association="Self.FK_Events_Location">
+            <End Role="Location" EntitySet="Location" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Events_Privacy_Type_Id" Association="Self.FK_Events_Privacy_Type_Id">
+            <End Role="Privacy_Type" EntitySet="Privacy_Type" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Friends_Category" Association="Self.FK_Friends_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Friends" EntitySet="Friends" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Friends_Friended" Association="Self.FK_Friends_Friended">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Friends" EntitySet="Friends" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Friends_Username" Association="Self.FK_Friends_Username">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Friends" EntitySet="Friends" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Group_User_Group" Association="Self.FK_Group_User_Group">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Group_User" EntitySet="Group_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Group_User_Username" Association="Self.FK_Group_User_Username">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Group_User" EntitySet="Group_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Groups_Category" Association="Self.FK_Groups_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Groups" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Groups_Created_By" Association="Self.FK_Groups_Created_By">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Groups" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_Type" Association="Self.FK_Location_Type">
+            <End Role="Type" EntitySet="Type" />
+            <End Role="Location" EntitySet="Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_Zipcode" Association="Self.FK_Location_Zipcode">
+            <End Role="Town" EntitySet="Town" />
+            <End Role="Location" EntitySet="Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_Message" Association="Self.FK_Message_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="User_Message" EntitySet="User_Message" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Photos_Privacy_Type" Association="Self.FK_Photos_Privacy_Type">
+            <End Role="Privacy_Type" EntitySet="Privacy_Type" />
+            <End Role="Photos" EntitySet="Photos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Photos_Visit" Association="Self.FK_Photos_Visit">
+            <End Role="Visits" EntitySet="Visits" />
+            <End Role="Photos" EntitySet="Photos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reciever_Message" Association="Self.FK_Reciever_Message">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="User_Message" EntitySet="User_Message" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sender_Message" Association="Self.FK_Sender_Message">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="User_Message" EntitySet="User_Message" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Town_Region" Association="Self.FK_Town_Region">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="Town" EntitySet="Town" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Visits_Location" Association="Self.FK_Visits_Location">
+            <End Role="Location" EntitySet="Location" />
+            <End Role="Visits" EntitySet="Visits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Visits_Username" Association="Self.FK_Visits_Username">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Visits" EntitySet="Visits" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Category_Id" />
+          </Key>
+          <Property Name="Category_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Category_Type_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category_Type" Relationship="Self.FK_Category_Category_Type" FromRole="Category" ToRole="Category_Type" />
+          <NavigationProperty Name="Events" Relationship="Self.FK_Events_Category" FromRole="Category" ToRole="Events" />
+          <NavigationProperty Name="Friends" Relationship="Self.FK_Friends_Category" FromRole="Category" ToRole="Friends" />
+          <NavigationProperty Name="Groups" Relationship="Self.FK_Groups_Category" FromRole="Category" ToRole="Groups" />
+        </EntityType>
+        <EntityType Name="Category_Type">
+          <Key>
+            <PropertyRef Name="Category_Type_Id" />
+          </Key>
+          <Property Name="Category_Type_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Categories" Relationship="Self.FK_Category_Category_Type" FromRole="Category_Type" ToRole="Category" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Event_Id" />
+          </Key>
+          <Property Name="Event_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Location_Id" Type="Int32" Nullable="false" />
+          <Property Name="Category_Id" Type="Int32" Nullable="false" />
+          <Property Name="Created_By" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Privacy_Type_Id" Type="Int32" Nullable="false" />
+          <Property Name="Creation_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Start_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="End_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Image_Url" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Deletion_Date" Type="DateTime" Precision="3" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Events_Category" FromRole="Events" ToRole="Category" />
+          <NavigationProperty Name="Event_User" Relationship="Self.FK_Event_User_Event" FromRole="Events" ToRole="Event_User" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Events_Created_By" FromRole="Events" ToRole="Users" />
+          <NavigationProperty Name="Location" Relationship="Self.FK_Events_Location" FromRole="Events" ToRole="Location" />
+          <NavigationProperty Name="Privacy_Type" Relationship="Self.FK_Events_Privacy_Type_Id" FromRole="Events" ToRole="Privacy_Type" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Groups_Id" />
+          </Key>
+          <Property Name="Groups_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Category_Id" Type="Int32" Nullable="false" />
+          <Property Name="Created_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Deletion_Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Groups_Category" FromRole="Groups" ToRole="Category" />
+          <NavigationProperty Name="Group_User" Relationship="Self.FK_Group_User_Group" FromRole="Groups" ToRole="Group_User" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Groups_Created_By" FromRole="Groups" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Location_Id" />
+          </Key>
+          <Property Name="Location_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Longitude" Type="Decimal" Precision="8" Scale="5" Nullable="false" />
+          <Property Name="Lattitude" Type="Decimal" Precision="8" Scale="5" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Type_Id" Type="Int32" Nullable="false" />
+          <Property Name="Creation_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Likes" Type="Int32" Nullable="false" />
+          <Property Name="Dislikes" Type="Int32" Nullable="false" />
+          <Property Name="Popularity" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="Approved" Type="Boolean" Nullable="false" />
+          <Property Name="Zipcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Events" Relationship="Self.FK_Events_Location" FromRole="Location" ToRole="Events" />
+          <NavigationProperty Name="Type" Relationship="Self.FK_Location_Type" FromRole="Location" ToRole="Type" />
+          <NavigationProperty Name="Town" Relationship="Self.FK_Location_Zipcode" FromRole="Location" ToRole="Town" />
+          <NavigationProperty Name="Visits" Relationship="Self.FK_Visits_Location" FromRole="Location" ToRole="Visits" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Message_Id" />
+          </Key>
+          <Property Name="Message_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Message1" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sent_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Read_Date" Type="DateTime" Precision="3" />
+          <Property Name="Deletion_Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="User_Message" Relationship="Self.FK_Message_Message" FromRole="Message" ToRole="User_Message" />
+        </EntityType>
+        <EntityType Name="Photo">
+          <Key>
+            <PropertyRef Name="Photos_Id" />
+          </Key>
+          <Property Name="Photos_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Visit_Id" Type="Int32" Nullable="false" />
+          <Property Name="Image_Url" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Like" Type="Int32" Nullable="false" />
+          <Property Name="Dislike" Type="Int32" Nullable="false" />
+          <Property Name="Report" Type="Int32" Nullable="false" />
+          <Property Name="Popularity" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="Privacy_Type_Id" Type="Int32" />
+          <Property Name="Deletion_Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Privacy_Type" Relationship="Self.FK_Photos_Privacy_Type" FromRole="Photos" ToRole="Privacy_Type" />
+          <NavigationProperty Name="Visit" Relationship="Self.FK_Photos_Visit" FromRole="Photos" ToRole="Visits" />
+        </EntityType>
+        <EntityType Name="Privacy_Type">
+          <Key>
+            <PropertyRef Name="Privacy_Type_Id" />
+          </Key>
+          <Property Name="Privacy_Type_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Events" Relationship="Self.FK_Events_Privacy_Type_Id" FromRole="Privacy_Type" ToRole="Events" />
+          <NavigationProperty Name="Photos" Relationship="Self.FK_Photos_Privacy_Type" FromRole="Privacy_Type" ToRole="Photos" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="Region_Id" />
+          </Key>
+          <Property Name="Region_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Total_Locations" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Towns" Relationship="Self.FK_Town_Region" FromRole="Region" ToRole="Town" />
+        </EntityType>
+        <EntityType Name="Town">
+          <Key>
+            <PropertyRef Name="Zipcode" />
+          </Key>
+          <Property Name="Zipcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Region_Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Image_Url" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Locations" Relationship="Self.FK_Location_Zipcode" FromRole="Town" ToRole="Location" />
+          <NavigationProperty Name="Region" Relationship="Self.FK_Town_Region" FromRole="Town" ToRole="Region" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="Type_Id" />
+          </Key>
+          <Property Name="Type_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Locations" Relationship="Self.FK_Location_Type" FromRole="Type" ToRole="Location" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Total_Places" Type="Int32" Nullable="false" />
+          <Property Name="Ranking" Type="Decimal" Precision="2" Scale="2" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Birth_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deletion_Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Events" Relationship="Self.FK_Events_Created_By" FromRole="Users" ToRole="Events" />
+          <NavigationProperty Name="Groups" Relationship="Self.FK_Groups_Created_By" FromRole="Users" ToRole="Groups" />
+          <NavigationProperty Name="Event_User" Relationship="Self.FK_Event_User_Username" FromRole="Users" ToRole="Event_User" />
+          <NavigationProperty Name="Friends" Relationship="Self.FK_Friends_Friended" FromRole="Users" ToRole="Friends" />
+          <NavigationProperty Name="Friends1" Relationship="Self.FK_Friends_Username" FromRole="Users" ToRole="Friends" />
+          <NavigationProperty Name="Group_User" Relationship="Self.FK_Group_User_Username" FromRole="Users" ToRole="Group_User" />
+          <NavigationProperty Name="User_Message" Relationship="Self.FK_Reciever_Message" FromRole="Users" ToRole="User_Message" />
+          <NavigationProperty Name="User_Message1" Relationship="Self.FK_Sender_Message" FromRole="Users" ToRole="User_Message" />
+          <NavigationProperty Name="Visits" Relationship="Self.FK_Visits_Username" FromRole="Users" ToRole="Visits" />
+        </EntityType>
+        <EntityType Name="Visit">
+          <Key>
+            <PropertyRef Name="Visit_Id" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Location_Id" Type="Int32" Nullable="false" />
+          <Property Name="Visit_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Favorite" Type="Boolean" Nullable="false" />
+          <Property Name="Deletion_Date" Type="DateTime" Precision="3" />
+          <Property Name="Visit_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Location" Relationship="Self.FK_Visits_Location" FromRole="Visits" ToRole="Location" />
+          <NavigationProperty Name="Photos" Relationship="Self.FK_Photos_Visit" FromRole="Visits" ToRole="Photos" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Visits_Username" FromRole="Visits" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Event_User">
+          <Key>
+            <PropertyRef Name="Event_Id" />
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="Attending" />
+            <PropertyRef Name="Event_User_Id" />
+          </Key>
+          <Property Name="Event_Id" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Attending" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Event" Relationship="Self.FK_Event_User_Event" FromRole="Event_User" ToRole="Events" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Event_User_Username" FromRole="Event_User" ToRole="Users" />
+          <Property Name="Event_User_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Friend">
+          <Key>
+            <PropertyRef Name="Friend_Username" />
+            <PropertyRef Name="Friended_Username" />
+            <PropertyRef Name="Category_Id" />
+            <PropertyRef Name="Firend_Id" />
+          </Key>
+          <Property Name="Friend_Username" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Friended_Username" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Category_Id" Type="Int32" Nullable="false" />
+          <Property Name="Accepted_Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Friends_Category" FromRole="Friends" ToRole="Category" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Friends_Friended" FromRole="Friends" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Self.FK_Friends_Username" FromRole="Friends" ToRole="Users" />
+          <Property Name="Firend_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Group_User">
+          <Key>
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="Group_Id" />
+            <PropertyRef Name="Join_Date" />
+            <PropertyRef Name="Group_User_Id" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Group_Id" Type="Int32" Nullable="false" />
+          <Property Name="Join_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deletion_Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Group" Relationship="Self.FK_Group_User_Group" FromRole="Group_User" ToRole="Groups" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Group_User_Username" FromRole="Group_User" ToRole="Users" />
+          <Property Name="Group_User_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="User_Message">
+          <Key>
+            <PropertyRef Name="Sender" />
+            <PropertyRef Name="Reciever" />
+            <PropertyRef Name="Message_Id" />
+            <PropertyRef Name="User_Message_Id" />
+          </Key>
+          <Property Name="Sender" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Reciever" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Message_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Message" Relationship="Self.FK_Message_Message" FromRole="User_Message" ToRole="Message" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Reciever_Message" FromRole="User_Message" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Self.FK_Sender_Message" FromRole="User_Message" ToRole="Users" />
+          <Property Name="User_Message_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Association Name="FK_Category_Category_Type">
+          <End Role="Category_Type" Type="Self.Category_Type" Multiplicity="1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category_Type">
+              <PropertyRef Name="Category_Type_Id" />
+            </Principal>
+            <Dependent Role="Category">
+              <PropertyRef Name="Category_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Events_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Events" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Category_Id" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Friends_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Friends" Type="Self.Friend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Category_Id" />
+            </Principal>
+            <Dependent Role="Friends">
+              <PropertyRef Name="Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Groups_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Groups" Type="Self.Group" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Category_Id" />
+            </Principal>
+            <Dependent Role="Groups">
+              <PropertyRef Name="Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_User_Event">
+          <End Role="Events" Type="Self.Event" Multiplicity="1" />
+          <End Role="Event_User" Type="Self.Event_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="Event_Id" />
+            </Principal>
+            <Dependent Role="Event_User">
+              <PropertyRef Name="Event_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Events_Created_By">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Events" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="Created_By" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Events_Location">
+          <End Role="Location" Type="Self.Location" Multiplicity="1" />
+          <End Role="Events" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Location_Id" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="Location_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Events_Privacy_Type_Id">
+          <End Role="Privacy_Type" Type="Self.Privacy_Type" Multiplicity="1" />
+          <End Role="Events" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Privacy_Type">
+              <PropertyRef Name="Privacy_Type_Id" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="Privacy_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Group_User_Group">
+          <End Role="Groups" Type="Self.Group" Multiplicity="1" />
+          <End Role="Group_User" Type="Self.Group_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="Groups_Id" />
+            </Principal>
+            <Dependent Role="Group_User">
+              <PropertyRef Name="Group_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Groups_Created_By">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Groups" Type="Self.Group" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Groups">
+              <PropertyRef Name="Created_By" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_Type">
+          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="Location" Type="Self.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_Zipcode">
+          <End Role="Town" Type="Self.Town" Multiplicity="1" />
+          <End Role="Location" Type="Self.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Town">
+              <PropertyRef Name="Zipcode" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="Zipcode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Visits_Location">
+          <End Role="Location" Type="Self.Location" Multiplicity="1" />
+          <End Role="Visits" Type="Self.Visit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Location_Id" />
+            </Principal>
+            <Dependent Role="Visits">
+              <PropertyRef Name="Location_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_Message">
+          <End Role="Message" Type="Self.Message" Multiplicity="1" />
+          <End Role="User_Message" Type="Self.User_Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Message_Id" />
+            </Principal>
+            <Dependent Role="User_Message">
+              <PropertyRef Name="Message_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Photos_Privacy_Type">
+          <End Role="Privacy_Type" Type="Self.Privacy_Type" Multiplicity="0..1" />
+          <End Role="Photos" Type="Self.Photo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Privacy_Type">
+              <PropertyRef Name="Privacy_Type_Id" />
+            </Principal>
+            <Dependent Role="Photos">
+              <PropertyRef Name="Privacy_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Photos_Visit">
+          <End Role="Visits" Type="Self.Visit" Multiplicity="1" />
+          <End Role="Photos" Type="Self.Photo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visits">
+              <PropertyRef Name="Visit_Id" />
+            </Principal>
+            <Dependent Role="Photos">
+              <PropertyRef Name="Visit_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Town_Region">
+          <End Role="Region" Type="Self.Region" Multiplicity="1" />
+          <End Role="Town" Type="Self.Town" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Region_Id" />
+            </Principal>
+            <Dependent Role="Town">
+              <PropertyRef Name="Region_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_User_Username">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Event_User" Type="Self.Event_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Event_User">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Friends_Friended">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Friends" Type="Self.Friend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Friends">
+              <PropertyRef Name="Friended_Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Friends_Username">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Friends" Type="Self.Friend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Friends">
+              <PropertyRef Name="Friend_Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Group_User_Username">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Group_User" Type="Self.Group_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Group_User">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reciever_Message">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="User_Message" Type="Self.User_Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="User_Message">
+              <PropertyRef Name="Reciever" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sender_Message">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="User_Message" Type="Self.User_Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="User_Message">
+              <PropertyRef Name="Sender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Visits_Username">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Visits" Type="Self.Visit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Visits">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DataModelConnection" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Category_Type" EntityType="Self.Category_Type" />
+          <EntitySet Name="Events" EntityType="Self.Event" />
+          <EntitySet Name="Groups" EntityType="Self.Group" />
+          <EntitySet Name="Locations" EntityType="Self.Location" />
+          <EntitySet Name="Messages" EntityType="Self.Message" />
+          <EntitySet Name="Photos" EntityType="Self.Photo" />
+          <EntitySet Name="Privacy_Type" EntityType="Self.Privacy_Type" />
+          <EntitySet Name="Regions" EntityType="Self.Region" />
+          <EntitySet Name="Towns" EntityType="Self.Town" />
+          <EntitySet Name="Types" EntityType="Self.Type" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Visits" EntityType="Self.Visit" />
+          <EntitySet Name="Event_User" EntityType="Self.Event_User" />
+          <EntitySet Name="Friends" EntityType="Self.Friend" />
+          <EntitySet Name="Group_User" EntityType="Self.Group_User" />
+          <EntitySet Name="User_Message" EntityType="Self.User_Message" />
+          <AssociationSet Name="FK_Category_Category_Type" Association="Self.FK_Category_Category_Type">
+            <End Role="Category_Type" EntitySet="Category_Type" />
+            <End Role="Category" EntitySet="Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Events_Category" Association="Self.FK_Events_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Friends_Category" Association="Self.FK_Friends_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Friends" EntitySet="Friends" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Groups_Category" Association="Self.FK_Groups_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Groups" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_User_Event" Association="Self.FK_Event_User_Event">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="Event_User" EntitySet="Event_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Events_Created_By" Association="Self.FK_Events_Created_By">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Events_Location" Association="Self.FK_Events_Location">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Events_Privacy_Type_Id" Association="Self.FK_Events_Privacy_Type_Id">
+            <End Role="Privacy_Type" EntitySet="Privacy_Type" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Group_User_Group" Association="Self.FK_Group_User_Group">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Group_User" EntitySet="Group_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Groups_Created_By" Association="Self.FK_Groups_Created_By">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Groups" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_Type" Association="Self.FK_Location_Type">
+            <End Role="Type" EntitySet="Types" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_Zipcode" Association="Self.FK_Location_Zipcode">
+            <End Role="Town" EntitySet="Towns" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Visits_Location" Association="Self.FK_Visits_Location">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="Visits" EntitySet="Visits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_Message" Association="Self.FK_Message_Message">
+            <End Role="Message" EntitySet="Messages" />
+            <End Role="User_Message" EntitySet="User_Message" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Photos_Privacy_Type" Association="Self.FK_Photos_Privacy_Type">
+            <End Role="Privacy_Type" EntitySet="Privacy_Type" />
+            <End Role="Photos" EntitySet="Photos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Photos_Visit" Association="Self.FK_Photos_Visit">
+            <End Role="Visits" EntitySet="Visits" />
+            <End Role="Photos" EntitySet="Photos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Town_Region" Association="Self.FK_Town_Region">
+            <End Role="Region" EntitySet="Regions" />
+            <End Role="Town" EntitySet="Towns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_User_Username" Association="Self.FK_Event_User_Username">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Event_User" EntitySet="Event_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Friends_Friended" Association="Self.FK_Friends_Friended">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Friends" EntitySet="Friends" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Friends_Username" Association="Self.FK_Friends_Username">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Friends" EntitySet="Friends" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Group_User_Username" Association="Self.FK_Group_User_Username">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Group_User" EntitySet="Group_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reciever_Message" Association="Self.FK_Reciever_Message">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="User_Message" EntitySet="User_Message" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sender_Message" Association="Self.FK_Sender_Message">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="User_Message" EntitySet="User_Message" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Visits_Username" Association="Self.FK_Visits_Username">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Visits" EntitySet="Visits" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbModelStoreContainer" CdmEntityContainer="DataModelConnection">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="DbModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Category_Type_Id" ColumnName="Category_Type_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Category_Type">
+            <EntityTypeMapping TypeName="DbModel.Category_Type">
+              <MappingFragment StoreEntitySet="Category_Type">
+                <ScalarProperty Name="Category_Type_Id" ColumnName="Category_Type_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="DbModel.Event">
+              <MappingFragment StoreEntitySet="Events">
+                <ScalarProperty Name="Event_Id" ColumnName="Event_Id" />
+                <ScalarProperty Name="Location_Id" ColumnName="Location_Id" />
+                <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Privacy_Type_Id" ColumnName="Privacy_Type_Id" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+                <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+                <ScalarProperty Name="Image_Url" ColumnName="Image_Url" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Deletion_Date" ColumnName="Deletion_Date" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="DbModel.Group">
+              <MappingFragment StoreEntitySet="Groups">
+                <ScalarProperty Name="Groups_Id" ColumnName="Groups_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Deletion_Date" ColumnName="Deletion_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="DbModel.Location">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="Location_Id" ColumnName="Location_Id" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Lattitude" ColumnName="Lattitude" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Type_Id" ColumnName="Type_Id" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Likes" ColumnName="Likes" />
+                <ScalarProperty Name="Dislikes" ColumnName="Dislikes" />
+                <ScalarProperty Name="Popularity" ColumnName="Popularity" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="DbModel.Message">
+              <MappingFragment StoreEntitySet="Message">
+                <ScalarProperty Name="Message_Id" ColumnName="Message_Id" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Message1" ColumnName="Message" />
+                <ScalarProperty Name="Sent_Date" ColumnName="Sent_Date" />
+                <ScalarProperty Name="Read_Date" ColumnName="Read_Date" />
+                <ScalarProperty Name="Deletion_Date" ColumnName="Deletion_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Photos">
+            <EntityTypeMapping TypeName="DbModel.Photo">
+              <MappingFragment StoreEntitySet="Photos">
+                <ScalarProperty Name="Photos_Id" ColumnName="Photos_Id" />
+                <ScalarProperty Name="Visit_Id" ColumnName="Visit_Id" />
+                <ScalarProperty Name="Image_Url" ColumnName="Image_Url" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Like" ColumnName="Like" />
+                <ScalarProperty Name="Dislike" ColumnName="Dislike" />
+                <ScalarProperty Name="Report" ColumnName="Report" />
+                <ScalarProperty Name="Popularity" ColumnName="Popularity" />
+                <ScalarProperty Name="Privacy_Type_Id" ColumnName="Privacy_Type_Id" />
+                <ScalarProperty Name="Deletion_Date" ColumnName="Deletion_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Privacy_Type">
+            <EntityTypeMapping TypeName="DbModel.Privacy_Type">
+              <MappingFragment StoreEntitySet="Privacy_Type">
+                <ScalarProperty Name="Privacy_Type_Id" ColumnName="Privacy_Type_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regions">
+            <EntityTypeMapping TypeName="DbModel.Region">
+              <MappingFragment StoreEntitySet="Region">
+                <ScalarProperty Name="Region_Id" ColumnName="Region_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Total_Locations" ColumnName="Total_Locations" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Towns">
+            <EntityTypeMapping TypeName="DbModel.Town">
+              <MappingFragment StoreEntitySet="Town">
+                <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+                <ScalarProperty Name="Region_Id" ColumnName="Region_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image_Url" ColumnName="Image_Url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Types">
+            <EntityTypeMapping TypeName="DbModel.Type">
+              <MappingFragment StoreEntitySet="Type">
+                <ScalarProperty Name="Type_Id" ColumnName="Type_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="DbModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Total_Places" ColumnName="Total_Places" />
+                <ScalarProperty Name="Ranking" ColumnName="Ranking" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Birth_Date" ColumnName="Birth_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Deletion_Date" ColumnName="Deletion_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Visits">
+            <EntityTypeMapping TypeName="DbModel.Visit">
+              <MappingFragment StoreEntitySet="Visits">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Location_Id" ColumnName="Location_Id" />
+                <ScalarProperty Name="Visit_Date" ColumnName="Visit_Date" />
+                <ScalarProperty Name="Favorite" ColumnName="Favorite" />
+                <ScalarProperty Name="Deletion_Date" ColumnName="Deletion_Date" />
+                <ScalarProperty Name="Visit_Id" ColumnName="Visit_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Event_User">
+            <EntityTypeMapping TypeName="DbModel.Event_User">
+              <MappingFragment StoreEntitySet="Event_User">
+                <ScalarProperty Name="Event_User_Id" ColumnName="Event_User_Id" />
+                <ScalarProperty Name="Event_Id" ColumnName="Event_Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Attending" ColumnName="Attending" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Friends">
+            <EntityTypeMapping TypeName="DbModel.Friend">
+              <MappingFragment StoreEntitySet="Friends">
+                <ScalarProperty Name="Firend_Id" ColumnName="Firend_Id" />
+                <ScalarProperty Name="Friend_Username" ColumnName="Friend_Username" />
+                <ScalarProperty Name="Friended_Username" ColumnName="Friended_Username" />
+                <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+                <ScalarProperty Name="Accepted_Date" ColumnName="Accepted_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Group_User">
+            <EntityTypeMapping TypeName="DbModel.Group_User">
+              <MappingFragment StoreEntitySet="Group_User">
+                <ScalarProperty Name="Group_User_Id" ColumnName="Group_User_Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Group_Id" ColumnName="Group_Id" />
+                <ScalarProperty Name="Join_Date" ColumnName="Join_Date" />
+                <ScalarProperty Name="Deletion_Date" ColumnName="Deletion_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Message">
+            <EntityTypeMapping TypeName="DbModel.User_Message">
+              <MappingFragment StoreEntitySet="User_Message">
+                <ScalarProperty Name="User_Message_Id" ColumnName="User_Message_Id" />
+                <ScalarProperty Name="Sender" ColumnName="Sender" />
+                <ScalarProperty Name="Reciever" ColumnName="Reciever" />
+                <ScalarProperty Name="Message_Id" ColumnName="Message_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

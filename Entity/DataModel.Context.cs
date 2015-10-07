@@ -12,6 +12,8 @@ namespace Entity
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class DataModelConnection : DbContext
     {
@@ -42,5 +44,32 @@ namespace Entity
         public virtual DbSet<Friend> Friends { get; set; }
         public virtual DbSet<Group_User> Group_User { get; set; }
         public virtual DbSet<User_Message> User_Message { get; set; }
+    
+        public virtual ObjectResult<GetDeletedMessages_SP_Result> GetDeletedMessages_SP(string username)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("Username", username) :
+                new ObjectParameter("Username", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetDeletedMessages_SP_Result>("GetDeletedMessages_SP", usernameParameter);
+        }
+    
+        public virtual ObjectResult<GetRecievedMessages_SP_Result> GetRecievedMessages_SP(string username)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("Username", username) :
+                new ObjectParameter("Username", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetRecievedMessages_SP_Result>("GetRecievedMessages_SP", usernameParameter);
+        }
+    
+        public virtual ObjectResult<GetSentMessages_SP_Result> GetSentMessages_SP(string username)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("Username", username) :
+                new ObjectParameter("Username", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetSentMessages_SP_Result>("GetSentMessages_SP", usernameParameter);
+        }
     }
 }

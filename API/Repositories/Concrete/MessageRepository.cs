@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Entity;
 using System.Data.Entity;
 
+//Change name space from API.Repositories.Concrete to API.Repositories
 namespace API.Repositories
 {
+    //Implement BaseRepository and respective interface
     public class MessageRepository : BaseRepository, IMessageRepository
     {
+        //Initializer method that accepts data base context
         public MessageRepository(DataModelConnection context)
         {
+            //this.context is declared in BaseRepository
             this.context = context;
         }
 
+        //Public Methods
         public IEnumerable<GetRecievedMessages_SP_Result> GetRecievedMessages(string username)
         {
             var messages = context.GetRecievedMessages_SP(username);
@@ -51,6 +55,7 @@ namespace API.Repositories
             SaveChanges();
         }
 
+        //Private Methods
         private void ReadMessage(Message message)
         {
             message.Read_Date = DateTime.Now;

@@ -62,6 +62,7 @@ namespace API.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            //Register Repository here
             kernel.Bind<IMessageRepository>().To<MessageRepository>();
         }        
     }

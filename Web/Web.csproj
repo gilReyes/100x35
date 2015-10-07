@@ -153,6 +153,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Managers\Abstract\IMessageManager.cs" />
+    <Compile Include="Managers\Concrete\BaseManager.cs" />
+    <Compile Include="Managers\Concrete\MessageManager.cs" />
+    <Compile Include="Models\InboxViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1452,9 +1456,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Managers\Abstract\" />
-    <Folder Include="Managers\Concrete\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

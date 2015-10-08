@@ -20,8 +20,5 @@ namespace Entity
         public Nullable<System.DateTime> Read_Date { get; set; }
         public Nullable<System.DateTime> Deletion_Date { get; set; }
         public string Sender { get; set; }
-        public string Reciever { get; set; }
-        public int Message_Id1 { get; set; }
-        public int User_Message_Id { get; set; }
     }
 }

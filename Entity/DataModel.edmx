@@ -1273,13 +1273,13 @@ warning 6002: The table/view '100x35.dbo.Group_User' does not have a primary key
             <End Role="Visits" EntitySet="Visits" />
           </AssociationSet>
           <FunctionImport Name="GetDeletedMessages_SP" ReturnType="Collection(DbModel.GetDeletedMessages_SP_Result)">
-            <Parameter Name="Username" Mode="In" Type="String" />
+          <Parameter Name="Username" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetRecievedMessages_SP" ReturnType="Collection(DbModel.GetRecievedMessages_SP_Result)">
-            <Parameter Name="Username" Mode="In" Type="String" />
+          <Parameter Name="Username" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetSentMessages_SP" ReturnType="Collection(DbModel.GetSentMessages_SP_Result)">
-            <Parameter Name="Username" Mode="In" Type="String" />
+          <Parameter Name="Username" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GetDeletedMessages_SP_Result">
@@ -1289,10 +1289,7 @@ warning 6002: The table/view '100x35.dbo.Group_User' does not have a primary key
           <Property Type="DateTime" Name="Sent_Date" Nullable="false" Precision="23" />
           <Property Type="DateTime" Name="Read_Date" Nullable="true" Precision="23" />
           <Property Type="DateTime" Name="Deletion_Date" Nullable="true" Precision="23" />
-          <Property Type="String" Name="Sender" Nullable="false" MaxLength="25" />
           <Property Type="String" Name="Reciever" Nullable="false" MaxLength="25" />
-          <Property Type="Int32" Name="Message_Id1" Nullable="false" />
-          <Property Type="Int32" Name="User_Message_Id" Nullable="false" />
         </ComplexType>
         <ComplexType Name="GetRecievedMessages_SP_Result">
           <Property Type="Int32" Name="Message_Id" Nullable="false" />
@@ -1302,9 +1299,6 @@ warning 6002: The table/view '100x35.dbo.Group_User' does not have a primary key
           <Property Type="DateTime" Name="Read_Date" Nullable="true" Precision="23" />
           <Property Type="DateTime" Name="Deletion_Date" Nullable="true" Precision="23" />
           <Property Type="String" Name="Sender" Nullable="false" MaxLength="25" />
-          <Property Type="String" Name="Reciever" Nullable="false" MaxLength="25" />
-          <Property Type="Int32" Name="Message_Id1" Nullable="false" />
-          <Property Type="Int32" Name="User_Message_Id" Nullable="false" />
         </ComplexType>
         <ComplexType Name="GetSentMessages_SP_Result">
           <Property Type="Int32" Name="Message_Id" Nullable="false" />
@@ -1313,10 +1307,7 @@ warning 6002: The table/view '100x35.dbo.Group_User' does not have a primary key
           <Property Type="DateTime" Name="Sent_Date" Nullable="false" Precision="23" />
           <Property Type="DateTime" Name="Read_Date" Nullable="true" Precision="23" />
           <Property Type="DateTime" Name="Deletion_Date" Nullable="true" Precision="23" />
-          <Property Type="String" Name="Sender" Nullable="false" MaxLength="25" />
           <Property Type="String" Name="Reciever" Nullable="false" MaxLength="25" />
-          <Property Type="Int32" Name="Message_Id1" Nullable="false" />
-          <Property Type="Int32" Name="User_Message_Id" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1532,10 +1523,7 @@ warning 6002: The table/view '100x35.dbo.Group_User' does not have a primary key
                 <ScalarProperty Name="Sent_Date" ColumnName="Sent_Date" />
                 <ScalarProperty Name="Read_Date" ColumnName="Read_Date" />
                 <ScalarProperty Name="Deletion_Date" ColumnName="Deletion_Date" />
-                <ScalarProperty Name="Sender" ColumnName="Sender" />
                 <ScalarProperty Name="Reciever" ColumnName="Reciever" />
-                <ScalarProperty Name="Message_Id1" ColumnName="Message_Id1" />
-                <ScalarProperty Name="User_Message_Id" ColumnName="User_Message_Id" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -1549,9 +1537,6 @@ warning 6002: The table/view '100x35.dbo.Group_User' does not have a primary key
                 <ScalarProperty Name="Read_Date" ColumnName="Read_Date" />
                 <ScalarProperty Name="Deletion_Date" ColumnName="Deletion_Date" />
                 <ScalarProperty Name="Sender" ColumnName="Sender" />
-                <ScalarProperty Name="Reciever" ColumnName="Reciever" />
-                <ScalarProperty Name="Message_Id1" ColumnName="Message_Id1" />
-                <ScalarProperty Name="User_Message_Id" ColumnName="User_Message_Id" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -1564,10 +1549,7 @@ warning 6002: The table/view '100x35.dbo.Group_User' does not have a primary key
                 <ScalarProperty Name="Sent_Date" ColumnName="Sent_Date" />
                 <ScalarProperty Name="Read_Date" ColumnName="Read_Date" />
                 <ScalarProperty Name="Deletion_Date" ColumnName="Deletion_Date" />
-                <ScalarProperty Name="Sender" ColumnName="Sender" />
                 <ScalarProperty Name="Reciever" ColumnName="Reciever" />
-                <ScalarProperty Name="Message_Id1" ColumnName="Message_Id1" />
-                <ScalarProperty Name="User_Message_Id" ColumnName="User_Message_Id" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

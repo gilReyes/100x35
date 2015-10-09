@@ -6,13 +6,14 @@
     <label class="control-label">To:</label>
     <div class="controls controls-to">
         @Html.TextBoxFor(m => m.To, new { @class = "form-control", value = Model.To })
-        <input type="text" class="form-control" name="to" value="">
+        @Html.ValidationMessageFor(m => m.To)
     </div>
 </div>
 <div class="inbox-form-group">
     <label class="control-label">Subject:</label>
     <div class="controls">
         @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", value = Model.Subject })
+        @Html.ValidationMessageFor(m => m.Subject)
     </div>
 </div>
 <div class="inbox-form-group">
@@ -31,6 +32,6 @@
 </div>
 <div class="inbox-compose-btn">
     <button class="btn blue btn-send" type="submit"><i class="fa fa-check"></i>Send</button>
-    <button class="btn btn-danger btn-discard">Discard</button>
+    <button class="btn red btn-discard">Discard</button>
 </div>
 }

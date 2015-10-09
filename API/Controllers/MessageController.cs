@@ -2,56 +2,88 @@
 using Entity;
 using System.Collections.Generic;
 using System.Web.Helpers;
-using System.Web.Mvc;
+using System.Web.Http;
+using System.Web.Http.Results;
 using Newtonsoft.Json;
 
 namespace API.Controllers
 {
-    public class MessageController : Controller
+    public class MessageController : ApiController
     {
         //Add repository
-        private IMessageRepository _messageRepository;
+        private readonly IMessageRepository _messageRepository;
 
-        public MessageController(MessageRepository messageRepository)
+        public MessageController(IMessageRepository messageRepository)
         {
             //Initialize repository
             _messageRepository = messageRepository;
         }
 
         [HttpGet]
-        public JsonResult RecievedMessages(string username)
+        public IHttpActionResult RecievedMessages(string username)
         {
-            return Json(_messageRepository.GetRecievedMessages(username), JsonRequestBehavior.AllowGet);
+            if (string.IsNullOrEmpty(username))
+            {
+                return BadRequest();
+            }
+
+            return Ok(_messageRepository.GetRecievedMessages(username));
         }
 
         [HttpGet]
-        public JsonResult SentMessages(string username)
+        public IHttpActionResult SentMessages(string username)
         {
-            return Json(_messageRepository.GetSentMessages(username), JsonRequestBehavior.AllowGet);
+            if (string.IsNullOrEmpty(username))
+            {
+                return BadRequest();
+            }
+
+            return Ok(_messageRepository.GetSentMessages(username));
         }
 
         [HttpGet]
-        public JsonResult DeletedMessages(string username)
+        public IHttpActionResult DeletedMessages(string username)
         {
-            return Json(_messageRepository.GetDeletedMessages(username), JsonRequestBehavior.AllowGet);
+            if (string.IsNullOrEmpty(username))
+            {
+                return BadRequest();
+            }
+
+            return Ok(_messageRepository.GetDeletedMessages(username));
         }
 
         [HttpGet]
-        public JsonResult GetUserMessage(int messageId)
+        public IHttpActionResult GetUserMessage(int messageId)
         {
-            return Json(_messageRepository.GetUserMessageByMessageId(messageId), JsonRequestBehavior.AllowGet);
+            if (messageId == 0)
+            {
+                return BadRequest();
+            }
+
+            return Ok(_messageRepository.GetUserMessageByMessageId(messageId));
         }
 
         [HttpPost]
-        public void SendMessage(User_Message userMessage)
+        public IHttpActionResult SendMessage(User_Message userMessage)
         {
+            if (userMessage == null)
+            {
+                return BadRequest();
+            }
             _messageRepository.CreateMessage(userMessage);
+            return Ok();
         }
 
         [HttpPost]
-        public void DeleteMessage(int id)
+        public IHttpActionResult DeleteMessage(int id)
         {
+            if (id == 0)
+            {
+                return BadRequest();
+            }
+
             _messageRepository.DeleteMessage(id);
+            return Ok();
         }
     }
 }

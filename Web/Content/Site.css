@@ -41,6 +41,10 @@ textarea {
     padding-top: 10px;
 }
 
+.inbox .inbox-nav li.active.compose-btn a {
+    background: #35AA47 !important;
+}
+
 .inbox ul.inbox-nav li.tab-option span {
     font-size: 15px !important;
     color: #4D82A3 !important; 

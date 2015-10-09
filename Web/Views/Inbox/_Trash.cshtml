@@ -35,7 +35,7 @@
             {
                 foreach (var message in Model)
                 {
-                    var cssString = (message.Read_Date == null) ? "message unread" : "message";
+                    var cssString = (message.Read_Date == null) ? "message-trash unread" : "message-trash";
 
                     <tr class="@cssString" data-messageid="@message.Message_Id">
                         <td class="view-message hidden-xs">

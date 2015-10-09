@@ -1459,13 +1459,15 @@
     <Content Include="Views\Inbox\_Reply.cshtml" />
     <Content Include="Views\Inbox\_Compose.cshtml" />
     <Content Include="Views\Inbox\_Inbox.cshtml" />
-    <Content Include="Views\Inbox\_Read.cshtml" />
+    <Content Include="Views\Inbox\_ReadInbox.cshtml" />
     <Content Include="Views\Submit\Index.cshtml" />
     <Content Include="Views\Friends\Index.cshtml" />
     <Content Include="Views\Inbox\_Outbox.cshtml" />
     <Content Include="Views\Inbox\_Trash.cshtml" />
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
+    <Content Include="Views\Inbox\_ReadSent.cshtml" />
+    <Content Include="Views\Inbox\_ReadTrash.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

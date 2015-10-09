@@ -102,6 +102,8 @@
     <Compile Include="Message.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Metadata\MessageMetadata.cs" />
+    <Compile Include="Metadata\User_MessageMetadata.cs" />
     <Compile Include="Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

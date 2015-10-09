@@ -10,8 +10,8 @@ namespace Web.Managers
         public BaseManager()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost:49606/");
-            //client.BaseAddress = new Uri("http://100x35api.azurewebsites.net/");
+            client.BaseAddress = new Uri("http://localhost:49606/api/");
+            //client.BaseAddress = new Uri("http://100x35api.azurewebsites.net/api/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }

@@ -1,17 +1,19 @@
 ﻿@model Web.Models.ComposeViewReply
 
-@Html.BeginForm("Compose", "Inbox", FormMethod.Post, new { @class = "inbox-compose form-horizontal", id = "ComposeForm" })
+@using (Html.BeginForm("Compose", "Inbox", FormMethod.Post, new { @class = "inbox-compose form-horizontal", id = "ComposeForm" }))
 {
 <div class="inbox-form-group mail-to">
     <label class="control-label">To:</label>
     <div class="controls controls-to">
-        @Html.TextBoxFor(m => m.To, new {@class = "form-control"})
+        @Html.TextBoxFor(m => m.To, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.To)
     </div>
 </div>
 <div class="inbox-form-group">
     <label class="control-label">Subject:</label>
     <div class="controls">
         @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Subject)
     </div>
 </div>
 <div class="inbox-form-group">
@@ -19,6 +21,6 @@
 </div>
 <div class="inbox-compose-btn">
     <button class="btn blue btn-send" type="submit"><i class="fa fa-check"></i>Send</button>
-    <button class="btn danger btn-discard">Discard</button>
+    <button class="btn red btn-discard">Discard</button>
 </div>
 }

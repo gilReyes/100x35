@@ -47,6 +47,13 @@ namespace Web.Controllers
             return PartialView("_Trash", model);
         }
 
+        [HttpPost]
+        public RedirectToRouteResult Delete(int id)
+        {
+            _messageManager.DeleteMessage(id);
+            return RedirectToAction("Inbox");
+        }
+
         [HttpGet]
         public PartialViewResult Compose()
         {
@@ -58,7 +65,7 @@ namespace Web.Controllers
         {
             var userMessage = new User_Message() { Sender = "test-username" ,Reciever = model.To, Message = new Message() { Sent_Date = DateTime.Now, Subject = model.Subject, Message1 = model.Message} };
             _messageManager.SendMessage(userMessage);
-            return RedirectToAction("Outbox");
+            return RedirectToAction("Inbox");
         }
 
         [HttpGet]
@@ -74,15 +81,28 @@ namespace Web.Controllers
         {
             var userMessage = new User_Message() { Sender = "test-username", Reciever = model.To, Message = new Message() { Sent_Date = DateTime.Now, Subject = model.Subject, Message1 = model.Message } };
             _messageManager.SendMessage(userMessage);
-            return RedirectToAction("Outbox");
+            return RedirectToAction("Inbox");
         }
 
         [HttpGet]
-        public PartialViewResult View(int id)
+        public PartialViewResult ViewInboxMessage(int id)
         {
             var userMessage = _messageManager.GetUserMessageByMessageId(id);
-            return PartialView("_Read", userMessage);
+            return PartialView("_ReadInbox", userMessage);
         }
 
+        [HttpGet]
+        public PartialViewResult ViewSentMessage(int id)
+        {
+            var userMessage = _messageManager.GetUserMessageByMessageId(id);
+            return PartialView("_ReadSent", userMessage);
+        }
+
+        [HttpGet]
+        public PartialViewResult ViewDeletedMessage(int id)
+        {
+            var userMessage = _messageManager.GetUserMessageByMessageId(id);
+            return PartialView("_ReadTrash", userMessage);
+        }
     }
 }

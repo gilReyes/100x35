@@ -19,6 +19,6 @@ namespace Entity
         public System.DateTime Sent_Date { get; set; }
         public Nullable<System.DateTime> Read_Date { get; set; }
         public Nullable<System.DateTime> Deletion_Date { get; set; }
-        public string Reciever { get; set; }
+        public string Sender { get; set; }
     }
 }

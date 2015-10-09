@@ -49,6 +49,17 @@ Inbox Page
   text-decoration: none;
 }
 
+.inbox .inbox-nav li.active.compose-btn b {
+  top: 12px;
+  right: -6px;
+  width: 6px;
+  position: absolute;
+  display: inline-block;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid #35AA47;
+}
+
 .inbox .inbox-nav li.active b {
   top: 12px;
   right: -6px;

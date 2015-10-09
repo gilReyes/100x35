@@ -5,8 +5,8 @@
         });
     }
 
-    var handleDiscardBtn = function() {
-        $('#btn-discard').on('click', function(e) {
+    var handleDiscardBtn = function () {
+        $('.btn-discard').on('click', function (e) {
             e.preventDefault();
             $.ajax({
                 url: siteUrl + "Inbox/Inbox",
@@ -25,18 +25,22 @@
         handleDiscardBtn();
         $('#ComposeForm').on('submit', function (e) {
             e.preventDefault();
-            $.ajax({
-                url: siteUrl + "Inbox/Compose",
-                type: "POST",
-                data: $(this).serialize()
-            }).success(function (data) {
-                $('#Body').html(data);
-                handleEditorInit();
-                handleCompose();
-                handleInbox();
-            }).error(function () {
-                showError();
-            });
+            if ($(this).validate()) {
+                $.ajax({
+                    url: siteUrl + "Inbox/Compose",
+                    type: "POST",
+                    data: $(this).serialize()
+                }).success(function(data) {
+                    $('#Body').html(data);
+                    handleEditorInit();
+                    handleCompose();
+                    handleInbox();
+                }).error(function() {
+                    showError();
+                });
+            } else {
+                
+            }
         });
     }
 
@@ -62,18 +66,20 @@
         handleDiscardBtn();
         $('#ReplyForm').on('submit', function (e) {
             e.preventDefault();
-            $.ajax({
-                url: siteUrl + "Inbox/Reply",
-                type: "POST",
-                data: $(this).serialize()
-            }).success(function (data) {
-                $('#Body').html(data);
-                handleEditorInit();
-                handleCompose();
-                handleInbox();
-            }).error(function () {
-                showError();
-            });
+            if ($(this).valid()) {
+                $.ajax({
+                    url: siteUrl + "Inbox/Reply",
+                    type: "POST",
+                    data: $(this).serialize()
+                }).success(function (data) {
+                    $('#Body').html(data);
+                    handleEditorInit();
+                    handleCompose();
+                    handleInbox();
+                }).error(function () {
+                    showError();
+                });
+            }
         });
     }
 
@@ -83,7 +89,8 @@
             e.preventDefault();
             $.ajax({
                 url: siteUrl + "Inbox/Reply",
-                type: "GET"
+                type: "GET",
+                data: { replyingToId: $(this).attr('data-messageid') }
             }).success(function (data) {
                 $('#Body').html(data);
                 handleEditorInit();
@@ -95,8 +102,26 @@
         });
     }
 
+    var handleMessageDelete = function () {
+        $('#DeletedBtn').on('click', function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: siteUrl + "Inbox/Delete",
+                type: "POST",
+                data: { id: $(this).attr('data-messageid') }
+            }).success(function (data) {
+                $('#Body').html(data);
+                handleRead();
+                handleCompose();
+                handleInbox();
+            }).error(function () {
+                showError();
+            });
+        });
+    }
+
     var handleInbox = function () {
-        $('#InboxBtn').on('click', function (e) {
+        $('#InboxBtn, .goto-inbox-btn').on('click', function (e) {
             e.preventDefault();
             $.ajax({
                 url: siteUrl + "Inbox/Inbox",
@@ -112,7 +137,7 @@
     }
 
     var handleTrash = function () {
-        $('#TrashBtn').on('click', function (e) {
+        $('#TrashBtn, .goto-trash-btn').on('click', function (e) {
             e.preventDefault();
             $.ajax({
                 url: siteUrl + "Inbox/Deleted",
@@ -128,7 +153,7 @@
     }
 
     var handleSent = function () {
-        $('#SentBtn').on('click', function (e) {
+        $('#SentBtn, .goto-sent-btn').on('click', function (e) {
             e.preventDefault();
             $.ajax({
                 url: siteUrl + "Inbox/Outbox",
@@ -147,12 +172,41 @@
         $('.message').on('click', function (e) {
             e.preventDefault();
             $.ajax({
-                url: siteUrl + "Inbox/View",
+                url: siteUrl + "Inbox/ViewInboxMessage",
                 type: "GET",
                 data: { id: $(this).attr('data-messageid') }
             }).success(function (data) {
                 $('#Body').html(data);
+                handleMessageDelete();
                 handleCompose();
+                handleReply();
+            }).error(function () {
+                showError();
+            });
+        });
+
+        $('.message-sent').on('click', function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: siteUrl + "Inbox/ViewSentMessage",
+                type: "GET",
+                data: { id: $(this).attr('data-messageid') }
+            }).success(function (data) {
+                $('#Body').html(data);
+                handleReply();
+            }).error(function () {
+                showError();
+            });
+        });
+
+        $('.message-trash').on('click', function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: siteUrl + "Inbox/ViewSentMessage",
+                type: "GET",
+                data: { id: $(this).attr('data-messageid') }
+            }).success(function (data) {
+                $('#Body').html(data);
                 handleReply();
             }).error(function () {
                 showError();

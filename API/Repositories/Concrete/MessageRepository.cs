@@ -55,9 +55,12 @@ namespace API.Repositories
         public void DeleteMessage(int id)
         {
             var message = context.Messages.Find(id);
-            message.Deletion_Date = DateTime.Now;
-            context.Entry(message).State = EntityState.Modified;
-            SaveChanges();
+            if (message != null)
+            {
+                message.Deletion_Date = DateTime.Now;
+                context.Entry(message).State = EntityState.Modified;
+                SaveChanges();
+            }
         }
 
         //Private Methods

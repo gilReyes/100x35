@@ -16,7 +16,7 @@ namespace Web.Managers
         {
             try
             {
-                var response = client.GetAsync(string.Format("Message/RecievedMessages/{0}", username)).Result;
+                var response = client.GetAsync(string.Format("Message/RecievedMessages/?username={0}", username)).Result;
                 switch(response.StatusCode)
                 {
                     case HttpStatusCode.OK:
@@ -31,7 +31,7 @@ namespace Web.Managers
             }
             catch(Exception ex)
             {
-                throw new Exception("Could not get messages from API");
+                throw;
             }
         }
 
@@ -39,7 +39,7 @@ namespace Web.Managers
         {
             try
             {
-                var response = client.GetAsync(string.Format("Message/SentMessages/{0}", username)).Result;
+                var response = client.GetAsync(string.Format("Message/SentMessages/?username={0}", username)).Result;
                 switch (response.StatusCode)
                 {
                     case HttpStatusCode.OK:
@@ -54,7 +54,7 @@ namespace Web.Managers
             }
             catch (Exception ex)
             {
-                throw new Exception("Could not get messages from API");
+                throw;
             }
         }
 
@@ -62,7 +62,7 @@ namespace Web.Managers
         {
             try
             {
-                var response = client.GetAsync(string.Format("Message/DeletedMessages/{0}", username)).Result;
+                var response = client.GetAsync(string.Format("Message/DeletedMessages/?username={0}", username)).Result;
                 switch (response.StatusCode)
                 {
                     case HttpStatusCode.OK:
@@ -77,11 +77,11 @@ namespace Web.Managers
             }
             catch (Exception ex)
             {
-                throw new Exception("Could not get messages from API");
+                throw;
             }
         }
 
-        public Message GetMessage(int id)
+        public User_Message GetUserMessageByMessageId(int id)
         {
             try
             {
@@ -90,8 +90,8 @@ namespace Web.Managers
                 {
                     case HttpStatusCode.OK:
                         var json = response.Content.ReadAsStringAsync().Result;
-                        var message = JsonConvert.DeserializeObject<Message>(json);
-                        return message;
+                        var userMessage = JsonConvert.DeserializeObject<User_Message>(json);
+                        return userMessage;
                     case HttpStatusCode.NotFound:
                         throw new MissingMethodException();
                     default:
@@ -100,15 +100,15 @@ namespace Web.Managers
             }
             catch (Exception ex)
             {
-                throw new Exception("Could not get messages from API");
+                throw;
             }
         }
 
-        public bool SendMessage(Message message)
+        public bool SendMessage(User_Message userMessage)
         {
             try
             {
-                var content = new StringContent(JsonConvert.SerializeObject(message));
+                var content = new StringContent(JsonConvert.SerializeObject(userMessage));
                 var response = client.PostAsync("Message/SendMessage", content).Result;
                 switch (response.StatusCode)
                 {
@@ -122,7 +122,7 @@ namespace Web.Managers
             }
             catch (Exception ex)
             {
-                throw new Exception("Could not get messages from API");
+                throw;
             }
         }
 
@@ -143,7 +143,7 @@ namespace Web.Managers
             }
             catch (Exception ex)
             {
-                throw new Exception("Could not get messages from API");
+                throw;
             }
         }
     }

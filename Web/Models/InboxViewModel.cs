@@ -8,8 +8,16 @@ namespace Web.Models
 {
     public class ReplyViewModel
     {
-        public Message ReplyingTo { get; set; }
-        public Message NewMessage { get; set; }
+        public string ReplyingToMessage { get; set; }
+        public string To { get; set; }
+        public string Subject { get; set; }
+        public string Message { get; set; }
     }
 
+    public class ComposeViewReply
+    {
+        public string To { get; set; }
+        public string Subject { get; set; }
+        public string Message { get; set; }
+    }
 }

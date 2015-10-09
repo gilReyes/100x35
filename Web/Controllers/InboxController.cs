@@ -12,9 +12,9 @@ namespace Web.Controllers
     public class InboxController : Controller
     {
         //Add manager
-        private IMessageManager _messageManager;
+        private readonly IMessageManager _messageManager;
 
-        public InboxController(MessageManager messageManager)
+        public InboxController(IMessageManager messageManager)
         {
             //Initialize manager
             _messageManager = messageManager;
@@ -44,42 +44,44 @@ namespace Web.Controllers
         public PartialViewResult Deleted()
         {
             var model = _messageManager.DeletedMessages("test-username");
-            return PartialView("_Deleted", model);
+            return PartialView("_Trash", model);
         }
 
         [HttpGet]
         public PartialViewResult Compose()
         {
-            return PartialView("_Compose", new Message());
+            return PartialView("_Compose", new ComposeViewReply());
         }
 
         [HttpPost]
-        public RedirectToRouteResult Compose(Message message)
+        public RedirectToRouteResult Compose(ComposeViewReply model)
         {
-            _messageManager.SendMessage(message);
+            var userMessage = new User_Message() { Sender = "test-username" ,Reciever = model.To, Message = new Message() { Sent_Date = DateTime.Now, Subject = model.Subject, Message1 = model.Message} };
+            _messageManager.SendMessage(userMessage);
             return RedirectToAction("Outbox");
         }
 
         [HttpGet]
         public PartialViewResult Reply(int replyingToId)
         {
-            var message = _messageManager.GetMessage(replyingToId);
-            var model = new ReplyViewModel() { ReplyingTo = message };
+            var userMessage = _messageManager.GetUserMessageByMessageId(replyingToId);
+            var model = new ReplyViewModel() { ReplyingToMessage = userMessage.Message.Message1, Subject = userMessage.Message.Subject, To = userMessage.Sender};
             return PartialView("_Reply", model);
         }
 
         [HttpPost]
-        public RedirectToRouteResult Reply(Message message)
+        public RedirectToRouteResult Reply(ReplyViewModel model)
         {
-            _messageManager.SendMessage(message);
+            var userMessage = new User_Message() { Sender = "test-username", Reciever = model.To, Message = new Message() { Sent_Date = DateTime.Now, Subject = model.Subject, Message1 = model.Message } };
+            _messageManager.SendMessage(userMessage);
             return RedirectToAction("Outbox");
         }
 
         [HttpGet]
         public PartialViewResult View(int id)
         {
-            var message = _messageManager.GetMessage(id);
-            return PartialView("_Read", message);
+            var userMessage = _messageManager.GetUserMessageByMessageId(id);
+            return PartialView("_Read", userMessage);
         }
 
     }

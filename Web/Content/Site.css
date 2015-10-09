@@ -40,3 +40,13 @@ textarea {
 .padding-top-10 {
     padding-top: 10px;
 }
+
+.inbox ul.inbox-nav li.tab-option span {
+    font-size: 15px !important;
+    color: #4D82A3 !important; 
+}
+
+.inbox ul.inbox-nav li.active span {
+    font-size: 15px !important;
+    color: white !important;
+}

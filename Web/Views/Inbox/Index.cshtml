@@ -1,7 +1,8 @@
-﻿
+﻿@model IEnumerable<Entity.GetRecievedMessages_SP_Result>
 @{
     ViewBag.Title = "Inbox";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var unreadCount = @Model.Select(m => m.Read_Date == null).Count();
 }
 
 @section Styles {
@@ -19,25 +20,32 @@
                             <i class="fa fa-edit"></i> Compose
                         </a>
                     </li>
-                    <li class="inbox active">
+                    <li class="inbox active tab-option">
                         <a id="InboxBtn" href="javascript:;" class="btn" data-title="Inbox">
-                            Inbox(3)
+                            @if (unreadCount == 0)
+                            {
+                                <span>Inbox</span>
+                            }
+                            else
+                            {
+                                <span>Inbox(@unreadCount)</span>
+                            }
                         </a>
                         <b></b>
                     </li>
-                    <li class="sent">
+                    <li class="sent tab-option">
                         <a id="SentBtn" class="btn" href="javascript:;" data-title="Sent">
                             Sent
                         </a>
                         <b></b>
                     </li>
-                    <li class="draft">
-                        <a id="DraftBtn" class="btn" href="javascript:;" data-title="Draft">
-                            Draft
-                        </a>
-                        <b></b>
-                    </li>
-                    <li class="trash">
+                    @*<li class="draft">
+                <a id="DraftBtn" class="btn" href="javascript:;" data-title="Draft">
+                    Draft
+                </a>
+                <b></b>
+            </li>*@
+                    <li class="trash tab-option">
                         <a id="TrashBtn" class="btn" href="javascript:;" data-title="Trash">
                             Trash
                         </a>
@@ -45,7 +53,7 @@
                     </li>
                 </ul>
             </div>
-            <div id="InboxBody" class="col-md-10">
+            <div id="Body" class="col-md-10">
                 @{Html.RenderPartial("_Inbox");}
             </div>
         </div>

@@ -1,7 +1,9 @@
 ﻿using API.Repositories;
 using Entity;
 using System.Collections.Generic;
+using System.Web.Helpers;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 
 namespace API.Controllers
 {
@@ -17,33 +19,33 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<GetRecievedMessages_SP_Result> RecievedMessages(string username)
+        public JsonResult RecievedMessages(string username)
         {
-            return _messageRepository.GetRecievedMessages(username);
+            return Json(_messageRepository.GetRecievedMessages(username), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
-        public IEnumerable<GetSentMessages_SP_Result> SentMessages(string username)
+        public JsonResult SentMessages(string username)
         {
-            return _messageRepository.GetSentMessages(username);
+            return Json(_messageRepository.GetSentMessages(username), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
-        public IEnumerable<GetDeletedMessages_SP_Result> DeletedMessages(string username)
+        public JsonResult DeletedMessages(string username)
         {
-            return _messageRepository.GetDeletedMessages(username);
+            return Json(_messageRepository.GetDeletedMessages(username), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
-        public Message GetMessage(int id)
+        public JsonResult GetUserMessage(int messageId)
         {
-            return _messageRepository.GetMessageById(id);
+            return Json(_messageRepository.GetUserMessageByMessageId(messageId), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
-        public void SendMessage(Message message)
+        public void SendMessage(User_Message userMessage)
         {
-            _messageRepository.CreateMessage(message);
+            _messageRepository.CreateMessage(userMessage);
         }
 
         [HttpPost]

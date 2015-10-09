@@ -12,8 +12,8 @@ namespace Web.Managers
         IEnumerable<GetRecievedMessages_SP_Result> RecievedMessages(string username);
         IEnumerable<GetSentMessages_SP_Result> SentMessages(string username);
         IEnumerable<GetDeletedMessages_SP_Result> DeletedMessages(string username);
-        Message GetMessage(int id);
-        bool SendMessage(Message message);
+        User_Message GetUserMessageByMessageId(int id);
+        bool SendMessage(User_Message userMessage);
         bool DeleteMessage(int id);
     }
 }

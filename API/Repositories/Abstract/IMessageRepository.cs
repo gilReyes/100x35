@@ -12,8 +12,8 @@ namespace API.Repositories
         IEnumerable<GetRecievedMessages_SP_Result> GetRecievedMessages(string username);
         IEnumerable<GetSentMessages_SP_Result> GetSentMessages(string username);
         IEnumerable<GetDeletedMessages_SP_Result> GetDeletedMessages(string username);
-        Message GetMessageById(int id);
-        void CreateMessage(Message messaage);
+        User_Message GetUserMessageByMessageId(int id);
+        void CreateMessage(User_Message userMessaage);
         void DeleteMessage(int id);
     }
 }

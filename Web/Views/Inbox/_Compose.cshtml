@@ -1,22 +1,24 @@
-﻿<form class="inbox-compose form-horizontal" id="fileupload" action="javascript:;" method="POST" enctype="multipart/form-data">
-    <div class="inbox-form-group mail-to">
-        <label class="control-label">To:</label>
-        <div class="controls controls-to">
-            <input type="text" class="form-control" name="to">
-        </div>
+﻿@model Web.Models.ComposeViewReply
+
+@Html.BeginForm("Compose", "Inbox", FormMethod.Post, new { @class = "inbox-compose form-horizontal", id = "ComposeForm" })
+{
+<div class="inbox-form-group mail-to">
+    <label class="control-label">To:</label>
+    <div class="controls controls-to">
+        @Html.TextBoxFor(m => m.To, new {@class = "form-control"})
     </div>
-    <div class="inbox-form-group">
-        <label class="control-label">Subject:</label>
-        <div class="controls">
-            <input type="text" class="form-control" name="subject">
-        </div>
+</div>
+<div class="inbox-form-group">
+    <label class="control-label">Subject:</label>
+    <div class="controls">
+        @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
     </div>
-    <div class="inbox-form-group">
-        <textarea class="inbox-editor inbox-wysihtml5 form-control" name="message" rows="12"></textarea>
-    </div>
-    <div class="inbox-compose-btn">
-        <button class="btn blue"><i class="fa fa-check"></i>Send</button>
-        <button class="btn">Discard</button>
-        <button class="btn">Draft</button>
-    </div>
-</form>
+</div>
+<div class="inbox-form-group">
+    @Html.TextAreaFor(m => m.Message, new { @class = "inbox-editor inbox-wysihtml5 form-control", rows="12" })
+</div>
+<div class="inbox-compose-btn">
+    <button class="btn blue btn-send" type="submit"><i class="fa fa-check"></i>Send</button>
+    <button class="btn danger btn-discard">Discard</button>
+</div>
+}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Entity;
 using System.Data.Entity;
+using System.Linq;
 
 //Change name space from API.Repositories.Concrete to API.Repositories
 namespace API.Repositories
@@ -19,39 +20,43 @@ namespace API.Repositories
         //Public Methods
         public IEnumerable<GetRecievedMessages_SP_Result> GetRecievedMessages(string username)
         {
-            var messages = context.GetRecievedMessages_SP(username);
+            var messages = context.GetRecievedMessages_SP(username).ToList();
             return messages;
         }
 
         public IEnumerable<GetSentMessages_SP_Result> GetSentMessages(string username)
         {
-            var messages = context.GetSentMessages_SP(username);
+            var messages = context.GetSentMessages_SP(username).ToList();
             return messages;
         }
 
         public IEnumerable<GetDeletedMessages_SP_Result> GetDeletedMessages(string username)
         {
-            var messages = context.GetDeletedMessages_SP(username);
+            var messages = context.GetDeletedMessages_SP(username).ToList();
             return messages;
         }
 
-        public Message GetMessageById(int id)
+        public User_Message GetUserMessageByMessageId(int id)
         {
-            var message = context.Messages.Find(id);
-            ReadMessage(message);
-            return message;
+            var userMessage = context.User_Message.AsQueryable().FirstOrDefault(foo => foo.Message_Id == id);
+            ReadMessage(context.Messages.Find(id));
+            SaveChanges();
+            return userMessage;
         }
 
-        public void CreateMessage(Message messaage)
+        public void CreateMessage(User_Message userMessage)
         {
-            context.Messages.Add(messaage);
+            context.Messages.Add(userMessage.Message);
+            userMessage.Message_Id = userMessage.Message.Message_Id;
+            context.User_Message.Add(userMessage);
             SaveChanges();
         }
 
         public void DeleteMessage(int id)
         {
-            var message = GetMessageById(id);
-            context.Messages.Remove(message);
+            var message = context.Messages.Find(id);
+            message.Deletion_Date = DateTime.Now;
+            context.Entry(message).State = EntityState.Modified;
             SaveChanges();
         }
 

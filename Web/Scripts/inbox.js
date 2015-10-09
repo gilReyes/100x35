@@ -38,9 +38,7 @@
                 }).error(function() {
                     showError();
                 });
-            } else {
-                
-            }
+            } 
         });
     }
 

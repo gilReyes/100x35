@@ -4,15 +4,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
-<div class="jumbotron">
-    <img margin-left:auto margin-right:auto display:block width="100%" src="../../assets/admin/pages/media/gallery/MAPA.PNG" class="img-responsive" alt="Rincon">
-
-</div>
-
-
-
+<script src="../../mymaps/js/lib/d3.js"></script>
+<script src="../../mymaps/js/lib/klass.js"></script>
+<script src="../../mymaps/js/atlaspr.js"></script>
 
 
 <style>
@@ -25,6 +19,15 @@
 
 
 <!--tumbnail-->
+
+<div id="map"></div>
+
+<script type='text/javascript'>
+    var my_node = document.getElementById("map");
+    new AtlasPR({
+        node: my_node
+    });
+</script>
 
 <div class="col-md-4">
 

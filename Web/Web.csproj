@@ -1325,6 +1325,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="mymaps\js\atlaspr.js" />
+    <Content Include="mymaps\js\atlaspr_doc.js" />
+    <Content Include="mymaps\js\lib\d3.js" />
+    <Content Include="mymaps\js\lib\klass.js" />
+    <Content Include="mymaps\TestingMap.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\admin\pages\media\blog\Thumbs.db" />
@@ -1411,6 +1416,14 @@
     <Content Include="assets\globals\plugins\jquery-notific8\README.md" />
     <Content Include="assets\globals\plugins\jquery-notific8\_notific8.scss" />
     <Content Include="assets\globals\plugins\jquery-notific8\_themes.scss" />
+    <Content Include="mymaps\geotiles\barrios+isla+pueblos.json" />
+    <Content Include="mymaps\geotiles\barrios+isla.json" />
+    <Content Include="mymaps\geotiles\barrios+pueblos.json" />
+    <Content Include="mymaps\geotiles\barrios.json" />
+    <Content Include="mymaps\geotiles\isla+pueblos.json" />
+    <Content Include="mymaps\geotiles\isla.json" />
+    <Content Include="mymaps\geotiles\pueblos.json" />
+    <Content Include="mymaps\geotiles\puertorico-geo.json" />
     <None Include="Properties\PublishProfiles\100x35.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\inbox.js" />

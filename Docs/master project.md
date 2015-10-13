@@ -46,10 +46,9 @@ Project Links
 
 -   GitHub: <https://github.com/gilReyes/100x35>
 
-- Gantt Cahrts: <https://docs.google.com/a/upr.edu/spreadsheets/d/1daEm-eqTqk7diXlB98GIdQjrBP7xMe28IAn2X8uRWxE/edit?usp=sharing/>
-
 -   Connect Asana calendar with Google Calendar: <https://app.asana.com/-/0/ical?user=45968567389440&lists=48274406341713&hash=8c8706f8c2c5faf23942915911a10283b152956faf89e5f4617f8355b9b1ed0b>
 
 Gantt Charts
 ============
+Updated : <https://docs.google.com/a/upr.edu/spreadsheets/d/1daEm-eqTqk7diXlB98GIdQjrBP7xMe28IAn2X8uRWxE/edit?usp=sharing/>
 ![alt text](http://i.imgur.com/VQesy4H.png)

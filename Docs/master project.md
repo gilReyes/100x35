@@ -9,20 +9,19 @@ Project Plan
 ============
 
 ###***Major Milestones***
-
-- Project Kickoff : **15 Sep** (Done)
-- App GUI and DBMS instance: **24 Sep** (Done 28 Sept)
-- App Users logic, add locations to DBMS and Admin Tools: **8 Oct**
-- In-App Pictures logic, inbox system and DBMS population: **24 Oct**
-- App Debugging and Hosting: **7 Nov**
-- Completion: **21 Nov**
+- Project Kickoff : **15 Sept** (Done)
+- App GUI and DBMS instance: **28 Sept** (Done)
+- Complete functional HTML navigation, dummy data, base code for controllers **13 Oct** (Done)
+- Implement controllers for locations and user, add base data and functional web and mobile views: **28 Oct**
+- Implement controllers for events, groups and and inbox; functional app for web and mobile  **11 Nov**
+- Admin tools and final realease: **24 Nov**
 
 Project Team
 ============
 
->  **Project Lead:**   Stephan Elias Remy
+>  **Project Lead:**   Gil Reyes Melendez  
 
->  **Team Members:**   Jahannie Torres Rodríguez, Gil Reyes Melendez
+>  **Team Members:**   Jahannie Torres Rodríguez, Stephan Elias Remy
   ----------------------------------------------
 
 Top 5 Risks

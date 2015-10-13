@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Sign up";
+    Layout = "~/Views/Shared/_Layout - Copy.cshtml";
+}
+
+<div class="container">
+    <!--Sign up Form-->
+
+    <form class="form-signin">
+        <div class="row">
+            <h2 class="form-signin-heading">Sign Up</h2>
+        </div>
+        <div class="row">
+            <label for="inputName" class="sr-only">Name</label>
+            <input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus>
+        </div>
+        <div class="row">
+            <label for="inputUsername" class="sr-only">Username</label>
+            <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+        </div>
+
+        <div class="row">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        </div>
+
+        <div class="row">
+            <label for="inputRePassword" class="sr-only">Re-enter</label>
+            <input type="password" id="inputRePassword" class="form-control" placeholder="Re-enter Password" required>
+        </div>
+        <div class="row">
+            <a href="@Url.Action("Index","Dashboard")" class="btn btn-sm btn-primary" type="submit">Sign Up</a>
+        </div>
+        <div class="row">
+            <a class="btn btn-sm btn-primary" type="button" href="@Url.Action("Index","Home")">Cancel</a>
+        </div>
+
+    </form>
+</div>

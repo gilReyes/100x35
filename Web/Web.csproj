@@ -1464,7 +1464,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\SignUp\Index.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
@@ -1474,7 +1473,6 @@
     <Content Include="Views\Inbox\_Compose.cshtml" />
     <Content Include="Views\Inbox\_Inbox.cshtml" />
     <Content Include="Views\Inbox\_ReadInbox.cshtml" />
-    <Content Include="Views\Submit\Index.cshtml" />
     <Content Include="Views\Friends\Index.cshtml" />
     <Content Include="Views\Inbox\_Outbox.cshtml" />
     <Content Include="Views\Inbox\_Trash.cshtml" />
@@ -1482,6 +1480,9 @@
     <Content Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\Inbox\_ReadSent.cshtml" />
     <Content Include="Views\Inbox\_ReadTrash.cshtml" />
+    <Content Include="Views\Friends\MyFriends.cshtml" />
+    <Content Include="Views\SignUp\Index.cshtml" />
+    <Content Include="Views\Submit\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

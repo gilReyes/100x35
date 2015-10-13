@@ -1421,9 +1421,7 @@
     <Content Include="assets\globals\plugins\jquery-notific8\README.md" />
     <Content Include="assets\globals\plugins\jquery-notific8\_notific8.scss" />
     <Content Include="assets\globals\plugins\jquery-notific8\_themes.scss" />
-<<<<<<< HEAD
     <Content Include="Grid.mvc.readme" />
-=======
     <Content Include="mymaps\geotiles\barrios+isla+pueblos.json" />
     <Content Include="mymaps\geotiles\barrios+isla.json" />
     <Content Include="mymaps\geotiles\barrios+pueblos.json" />
@@ -1432,7 +1430,6 @@
     <Content Include="mymaps\geotiles\isla.json" />
     <Content Include="mymaps\geotiles\pueblos.json" />
     <Content Include="mymaps\geotiles\puertorico-geo.json" />
->>>>>>> origin/master
     <None Include="Properties\PublishProfiles\100x35.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\gridmvc.js" />

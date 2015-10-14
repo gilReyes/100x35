@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Submit Picture</h2>
+
+<div class="thumbnail">
+    <h3>Select File</h3>
+    <form action='' method='POST' enctype='multipart/form-data'>
+        <input type='file'  name='userFile'><br> <hr />
+        <h3>Choose Privacy</h3>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">Public</button>
+            <button type="button" class="btn btn-primary">Friends only</button>
+            <button type="button" class="btn btn-primary">Private</button>
+        </div> <br> <hr />
+
+
+
+        <input type='submit' class="btn btn-primary" name='upload_btn' value='Upload'>
+    </form>
+    
+    </div>
+

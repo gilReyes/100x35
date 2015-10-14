@@ -50,5 +50,6 @@ Project Links
 
 Gantt Charts
 ============
-Updated : <https://docs.google.com/a/upr.edu/spreadsheets/d/1daEm-eqTqk7diXlB98GIdQjrBP7xMe28IAn2X8uRWxE/edit?usp=sharing/>
-![alt text](http://i.imgur.com/VQesy4H.png)
+![alt text](http://i.imgur.com/fsC4RCJ.png)
+![alt text](http://i.imgur.com/g5KeqGk.png)
+![alt text](http://i.imgur.com/p5g9ek1.png)

@@ -151,6 +151,7 @@
     <Compile Include="Controllers\FriendsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InboxController.cs" />
+    <Compile Include="Controllers\LocationProfileController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SignUpController.cs" />
     <Compile Include="Controllers\SubmitController.cs" />
@@ -1483,6 +1484,7 @@
     <Content Include="Views\Friends\MyFriends.cshtml" />
     <Content Include="Views\SignUp\Index.cshtml" />
     <Content Include="Views\Submit\Index.cshtml" />
+    <Content Include="Views\LocationProfile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

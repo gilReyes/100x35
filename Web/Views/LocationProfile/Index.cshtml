@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewBag.Title = "Location";
+}
+
+
+
+<!--Carousel Style-->
+<style>
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img {
+        width: 70%;
+        margin: auto;
+    }
+</style>
+
+
+<!--Google Maps Script-->
+<script src="http://maps.googleapis.com/maps/api/js">
+</script>
+
+<script>
+function initialize() {
+  var mapProp = {
+      center: new google.maps.LatLng(18.3402, -67.2499),
+    zoom:15,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+<!--tumbnail-->
+
+
+
+<div>
+
+    <div class="row">
+        <div class="thumbnail">
+            <h2><b>El Faro</b></h2>
+            <!--Carousel Begin-->
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="../../assets/admin/pages/media/gallery/image3.jpg" class="img-responsive" alt="Rincon" width="460" height="345">
+                        <div class="carousel-caption">
+                            <h3>Rincón</h3>
+                            <p>Enjoy of this beatufil beach after a DB exam!</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="../../assets/admin/pages/media/gallery/image4.jpg" class="img-responsive" alt="Yunque" width="460" height="345">
+                        <div class="carousel-caption">
+                            <h3>Yunque</h3>
+                            <p>Get lost in "El Yunque" if your DB project does'nt run!</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="../../assets/admin/pages/media/gallery/image5.jpg" class="img-responsive" alt="Morro" width="460" height="345">
+                        <div class="carousel-caption">
+                            <h3>Morro</h3>
+                            <p>Jump from "El Morro" after watching your grade!</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <!--End Carrousel-->
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="thumbnail">
+            <hr />
+            <p><a href="#" class="btn btn-primary" role="button">Favorites ♥ </a><a href="#" class="btn btn-default" role="button">Wish List ♣</a></p>
+            <hr />
+      
+            <div class="list-group">
+                <div> 
+                    <h2> Description</h2>
+                    <p> A lighthouse has been standing at the same location since 1892. The original lighthouse, which was one of the many lighthouses built to help ships navigate the dangerous sea passage along the western coast, was damaged during an earthquake in 1918. From old photos that I have seen, it was beautiful made of brick with nice details and included a house for the lighthouse keeper’s family. Due to the damage caused by the earthquake, it had to be demolished, and the current 70-foot tall cylindrical tower was built in 1922.</p>
+
+
+            </div>
+                <div>
+                    <h2>Details</h2>
+                    <ul>
+                        <li>There is no charge to visit the Rincon lighthouse park. There is lots of free parking, too.</li>
+                        <li>There is no charge to visit the Rincon lighthouse park. There is lots of free parking, too.</li>
+                        <li> The Rincon lighthouse park is located on Route 4413, just off of Route 413.</li>
+                        <li> Use this map to locate places mentioned in this article. You can click on a placemark to view the GPS coordinates for that place.</li>
+
+
+                    </ul>
+
+                </div>
+                <div>
+                    <h2> Contact info</h2>
+                    <ul>
+                        <li>Phone: xxx-xxx-xxxx</li>
+                        <li>Email: abc@defg.com</li>
+                        <li>Direction: Street #2 Rincón, Puerto Rico</li>
+                     
+
+
+                    </ul>
+                    <div id="googleMap" style="width:500px;height:380px;"></div>
+
+                </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+

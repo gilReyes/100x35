@@ -90,3 +90,23 @@ Sprint 4:
         2. Mobile application
     
 ----------------------------------------------------------------------------------------------------------------------
+Update 10/27/15
+
+Sprint 3:
+    Implement controllers:
+        1. Events: View, Create, Edit, Attend
+        2. Groups: View, Create, Edit, Add, Remove
+        3. Locations Controller: View, Register, Visit
+    Add base data:
+        1. Towns
+        2. Region
+        3. Privacy Types
+        4. Location Types
+        5. Group Types
+        6. Category Types
+    Testing:
+        1. Web application
+        2. Mobile application
+
+
+

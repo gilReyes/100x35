@@ -7,25 +7,25 @@ What worked well?
 Sprint 0: For our team the part the worked the best was the ER-Diagram. Thanks to one of our members that already had a solid idea with all clear requirements its was pretty easy to design the ER-Diagram and it had only minor errors.
 Sprint 1: Creation of HTML views for the User Interface
 Sprint 2: The HTML views are functional.  Also, we created the base code for repositories, managers and controllers. We already have the inbox part retrieving and posting information in the DB.
+Sprint 3: Our Inbox and User Controllers are functional, the Puerto Rico map is working and responsible and some Stored Procedures are working.
 
 What Didn’t work well?
 
 Sprint 0: The git version control gave us some problems because we connected it directly to visual studio parallel with Team Foundation and the local repositories got all cluttered and at the end we decided to go only with git. The cloud hosting of our project also gave us some little problems because some references got changed when the project was pushed to github but at the end we managed to work things out
 Sprint 1: Azure Permissions giving problems when hosting DBMS
 Sprint 2: We tried to use the AtlasPR library but we had problems dislaying it.
+Sprint 3:  We found that our initial design had problems and that some important views where missing. Also we restructured the order of the controllers implementation.
 
 What we learned?
 
 Sprint 0: All of our team members learned how to design ER-Diagrams pretty well and got a good understanding of all of the basic concepts. Also we learned to connect a remote git repository directly to visual studio without having to use a git client. A very important thing we learn was how easy it was to host a web app using azure hosting services.
 Sprint 1: How to use MS SQL Server and one of the team members learned how to use ASP .NET MVC
 Sprint 2: The group was hable to fully understand the data flow between user side and api side.
+Sprint 3: The importance of a good design, keep track about the tasks and also we learned about how to create stored procedures to set and get data.
 
 Next Sprint Planning:
 Functionalities that should be developed next sprint:
 
-■	User 
-
-■	User Login
 
 ■	Admin Tools
 
@@ -35,6 +35,11 @@ Functionalities that should be developed next sprint:
 
 ■	Add multi language support
 
-Adjust work habits based on how progress is made
+■	Add data about towns, regions, privacy, among others
 
-Update Master Project Plan
+■Controller: Events, Groups, Locations	
+
+
+■	Adjust work habits based on how progress is made
+
+■	Update Master Project Plan

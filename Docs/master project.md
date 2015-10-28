@@ -12,8 +12,8 @@ Project Plan
 - Project Kickoff : **15 Sept** (Done)
 - App GUI and DBMS instance: **28 Sept** (Done)
 - Complete functional HTML navigation, dummy data, base code for controllers **13 Oct** (Done)
-- Implement controllers for locations and user, add base data and functional web and mobile views: **28 Oct**
-- Implement controllers for events, groups and and inbox; functional app for web and mobile  **11 Nov**
+- Implement controllers for inbox and user, add base data and functional web and mobile views: **28 Oct** (Done)
+- Implement controllers for events, groups and and locations; functional app for web and mobile  **11 Nov**
 - Admin tools and final realease: **24 Nov**
 
 Project Team

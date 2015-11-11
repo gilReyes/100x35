@@ -92,7 +92,7 @@ Sprint 4:
 ----------------------------------------------------------------------------------------------------------------------
 Update 10/27/15
 
-Sprint 3:
+Sprint 4:
     Implement controllers:
         1. Events: View, Create, Edit, Attend
         2. Groups: View, Create, Edit, Add, Remove
@@ -107,6 +107,19 @@ Sprint 3:
     Testing:
         1. Web application
         2. Mobile application
+-----------------------------------------------------------------------------------------------------------------------
+Update 11/10/15
 
-
-
+Sprint 5:
+    Implement controllers:
+        1. Groups: View, Create, Edit, Add, Remove
+    Add base data:
+        1. Towns
+        2. Region
+        3. Privacy Types
+        4. Location Types
+        5. Group Types
+        6. Category Types
+    Testing:
+        1. Web application
+        2. Mobile application
